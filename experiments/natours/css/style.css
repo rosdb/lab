@@ -130,6 +130,14 @@ body {
   display: inline-block;
 }
 
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
 
 .btn-white {
   background-color: #ffffff;
