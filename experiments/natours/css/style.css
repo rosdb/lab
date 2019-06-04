@@ -130,6 +130,7 @@ body {
   display: inline-block;
   border-radius: 100px;
   transition: all .2s;
+  position: relative;
 }
 
 .btn:hover {
@@ -146,4 +147,26 @@ body {
 .btn-white {
   background-color: #ffffff;
   color: #777777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #ffffff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
