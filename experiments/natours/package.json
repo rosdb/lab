@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "w": "pug --watch index.pug"
+    "build:html": "pug index.pug",
+    "watch:html": "npm run build:html -- --watch"
   },
   "author": "",
   "license": "ISC",
