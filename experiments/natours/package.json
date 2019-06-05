@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:pug": "pug index.pug",
-    "watch:pug": "npm run build:pug -- --watch"
+    "build:pug": "pug src --out dist --pretty",
+    "build:scss": "node-sass --source-map src/styles/main.scss dist/style.css",
+    "build:all": "run-p -cln build:*",
+    "watch:pug": "npm run build:pug -- --watch",
+    "watch:scss": "node-sass --watch --source-map src/styles/main.scss dist/style.css",
+    "watch:all": "run-p -cln watch:*"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "pug": "^2.0.3"
   }
 }
