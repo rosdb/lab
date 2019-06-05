@@ -44,18 +44,18 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 
 }
 
-.text-box {
+.header__text-box {
  position: absolute;
  top: 40%;
  left: 50%;
@@ -71,7 +71,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display:block;
   font-size: 6rem;
   font-weight: 400;
@@ -89,7 +89,7 @@ body {
 
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display:block;
   font-size: 2rem;
   font-weight: 700;
@@ -167,7 +167,7 @@ body {
 }
 
 
-.btn-white {
+.btn--white {
   background-color: #ffffff;
   color: #777777;
 }
@@ -185,7 +185,7 @@ body {
   transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #ffffff;
 }
 
@@ -194,7 +194,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s; /*animazione, durata, gestione della velocità, delay*/
   animation-fill-mode: backwards; /*definisce lo stile da applicare durante l'animazione: in questo caso, durante il delay, il btn avrà la stessa opacità definita nel primo keyframe */
 }
