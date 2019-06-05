@@ -2,6 +2,10 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
+$color-grey-dark: #777777;
+$color-white: #ffffff;
+
+
 *,
 *::after,
 *::before {
@@ -19,7 +23,7 @@ body {
   font-weight: 400;
   /*font-size:  16px;*/
   line-height: 1.7;
-  color: #777777;
+  color: $color-grey-dark;
   padding: 3rem;
 
   box-sizing: border-box;
@@ -59,7 +63,7 @@ body {
 }
 
 .heading-primary {
-  color:#ffffff;
+  color:$color-white;
   text-transform: uppercase;
 
   backface-visibility: hidden; /* fix per evitare lo shake nell'animazione del titolo su alcuni browser*/
@@ -163,8 +167,8 @@ body {
 
 
 .btn--white {
-  background-color: #ffffff;
-  color: #777777;
+  background-color: $color-white;
+  color: $color-grey-dark;
 }
 
 .btn::after {
@@ -181,7 +185,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #ffffff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
