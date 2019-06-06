@@ -1,4 +1,5 @@
 .card {
+  //FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -37,5 +38,24 @@
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  //FRONT SIZE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+      url(../public/assets/img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../public/assets/img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: url(../public/assets/img/nat-7.jpg);
+    }
+
   }
 }
