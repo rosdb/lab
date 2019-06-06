@@ -16,6 +16,7 @@
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
+    overflow: hidden; //fa sì che il border non venga nascosto dagli elementi figli
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front {
