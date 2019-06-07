@@ -1,4 +1,16 @@
 section(class="section-booking")
   .row
     .book
+      .book__form
+        form(class="form" action="#")
+          div(class="u-margin-bottom-medium")
+            h2(class="heading-secondary") Start Booking Now
+          .form__group
+            input(class="form__input" type="text" placeholder="Full Name" id="name" required)
+            label(for="name" class="form__label") Full Name
+          .form__group
+            input(class="form__input" type="email" placeholder="Email Address" id="email" required)
+            label(for="email" class="form__label") Email Address
+
+
 
