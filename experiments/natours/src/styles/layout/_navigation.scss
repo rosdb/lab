@@ -1,10 +1,18 @@
 .navigation {
 
   &__checkbox {
-
+    display: none;
   }
 
   &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
 
   }
 
