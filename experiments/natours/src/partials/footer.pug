@@ -1,6 +1,9 @@
 footer(class="footer")
   .footer__logo-box
-    img(srcset="../public/assets/img/logo-green-1x.png 1x,../public/assets/img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo")
+    picture.footer__logo
+      source(srcset="../public/assets/img/logo-green-small-1x.png 1x, ../public/assets/img/logo-green-small-2x.png 2x"
+             media="(max-width: 37.5em)")
+      img(srcset="../public/assets/img/logo-green-1x.png 1x, ../public/assets/img/logo-green-2x.png 2x" alt="Full logo")
   .row
     .col-1-of-2
       .footer__navigation
