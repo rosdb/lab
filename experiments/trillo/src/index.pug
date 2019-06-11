@@ -32,5 +32,31 @@ html(lang="en")
             img.user-nav__user-photo(src="../public/assets/img/user.jpg" alt="user photo")
             span.user-nav__user-name Jonas
       .content
-        nav.sidebar Navigation
+        nav.sidebar
+          ul.side-nav
+            li(class="side-nav__item side-nav__item--active")
+              a.side-nav__link(href="#")
+                svg.side-nav__icon
+                  use(xlink:href="../public/assets/img/sprite.svg#icon-home")
+                span Hotel
+            li.side-nav__item
+              a.side-nav__link(href="#")
+                svg.side-nav__icon
+                  use(xlink:href="../public/assets/img/sprite.svg#icon-aircraft-take-off")
+                span Flight
+            li.side-nav__item
+              a.side-nav__link(href="#")
+                svg.side-nav__icon
+                  use(xlink:href="../public/assets/img/sprite.svg#icon-key")
+                span Car rental
+            li.side-nav__item
+              a.side-nav__link(href="#")
+                svg.side-nav__icon
+                  use(xlink:href="../public/assets/img/sprite.svg#icon-map")
+                span Tours
+          .legal &copy; 2019 by trillo. All rights reserved.
+
+
+
+
         main.hotel-view Hotel view
