@@ -59,4 +59,34 @@ html(lang="en")
 
 
 
-        main.hotel-view Hotel view
+        main.hotel-view
+          .gallery
+            figure.gallery__item
+              img(src="../public/assets/img/hotel-1.jpg" alt="Photo of hotel 1" class="gallery__photo")
+            figure.gallery__item
+              img(src="../public/assets/img/hotel-2.jpg" alt="Photo of hotel 2" class="gallery__photo")
+            figure.gallery__item
+              img(src="../public/assets/img/hotel-3.jpg" alt="Photo of hotel 3" class="gallery__photo")
+          .overview
+            h1.overview__heading Hotel Las Palmas
+            .overview__stars
+              svg.overview__icon-star
+                use(xlink:href="../public/assets/img/sprite.svg#icon-star")
+              svg.overview__icon-star
+                use(xlink:href="../public/assets/img/sprite.svg#icon-star")
+              svg.overview__icon-star
+                use(xlink:href="../public/assets/img/sprite.svg#icon-star")
+              svg.overview__icon-star
+                use(xlink:href="../public/assets/img/sprite.svg#icon-star")
+              svg.overview__icon-star
+                use(xlink:href="../public/assets/img/sprite.svg#icon-star")
+            .overview__location
+              svg.overview__icon-location
+                use(xlink:href="../public/assets/img/sprite.svg#icon-location-pin")
+              button.btn-inline Albufeira, Portugal
+            .overview__rating
+              .overview__rating-average 8.6
+              .overview__rating-count 429 votes
+
+
+
