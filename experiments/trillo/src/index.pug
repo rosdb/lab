@@ -12,7 +12,25 @@ html(lang="en")
 
   body
     .container
-      header.header Header part
+      header.header
+        img.logo(src="../public/assets/img/logo.png" alt="trillo logo")
+        form.search(action="#")
+          input.search__input(type="text" placeholder="Search hotels")
+          button.search__button
+            svg.search__icon
+              use(xlink:href="../public/assets/img/sprite.svg#icon-magnifying-glass")
+        nav.user-nav
+          .user-nav__icon-box
+            svg.user-nav__icon
+              use(xlink:href="../public/assets/img/sprite.svg#icon-bookmark")
+            span.user-nav__notification 7
+          .user-nav__icon-box
+            svg.user-nav__icon
+              use(xlink:href="../public/assets/img/sprite.svg#icon-chat")
+            span.user-nav__notification 12
+          .user-nav__user
+            img.user-nav__user-photo(src="../public/assets/img/user.jpg" alt="user photo")
+            span.user-nav__user-name Jonas
       .content
         nav.sidebar Navigation
         main.hotel-view Hotel view
