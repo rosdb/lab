@@ -4,10 +4,10 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass src/styles/main.scss dist/style.css -w",
+    "watch:pug": "pug src --out dist --pretty",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:sass",
-    
+    "start": "npm-run-all --parallel devserver watch:sass watch:pug",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
@@ -21,6 +21,8 @@
     "concat": "^1.0.3",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "^4.1.1",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
