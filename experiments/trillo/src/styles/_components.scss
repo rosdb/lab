@@ -352,13 +352,19 @@
   &__item::before {
     content: "";
     display: inline-block;
-    height: 2rem;
-    width: 2rem;
+    height: 1rem;
+    width: 1rem;
     margin-right: .7rem;
 
     // Older browsers
-    background-image: url(../public/assets/img/chevron-thin-right.svg);
-    background-size: cover;
+    // background-image: url(../public/assets/img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    //Newer browsers - masks
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../public/assets/img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+
 
   }
 
