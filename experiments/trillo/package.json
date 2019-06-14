@@ -4,14 +4,14 @@
   "description": "trillo app",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass src/styles/main.scss dist/style.css -w",
+    "watch:sass": "node-sass src/styles/main.scss dist/style.css --watch",
     "watch:pug": "pug src --out dist --pretty",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:sass watch:pug",
+    "start": "run-p devserver watch:**",
     "compile:sass": "node-sass src/styles/main.scss dist/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/style.comp.css -o dist/style.prefix.css",
+    "prefix:css": "postcss dist/style.comp.css --output dist/style.prefix.css",
     "compress:css": "node-sass dist/style.prefix.css dist/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    "build:css": "run-s compile:sass prefix:css compress:css"
   },
   "author": "Rosaria De Biasio",
   "license": "ISC",
