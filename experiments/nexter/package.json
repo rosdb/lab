@@ -6,7 +6,7 @@
   "scripts": {
     "watch:sass": "node-sass src/styles/main.scss dist/style.css --watch",
     "watch:pug": "pug src --out dist --pretty",
-    "devserver": "live-server",
+    "devserver": "live-server --browser=firefox",
     "start": "run-p devserver watch:**",
     "compile:sass": "node-sass src/styles/main.scss dist/style.comp.css",
     "prefix:css": "postcss dist/style.comp.css --output dist/style.prefix.css",
