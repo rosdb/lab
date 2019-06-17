@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass src/styles/main.scss dist/style.css --watch",
-    "watch:pug": "pug src --out dist --pretty",
+    "watch:pug": "pug src --out dist --pretty -w",
     "devserver": "live-server",
     "start": "run-p devserver watch:**",
     "compile:sass": "node-sass src/styles/main.scss dist/style.comp.css",
