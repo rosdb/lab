@@ -28,16 +28,27 @@ const filters = {
   searchText: ''
 }
 
-//funzione che filtra l'array todos con il testo inserito nell'input e storato nella const filters
+
 const renderTodos = (todos, filters) => {
+  //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
   const filteredTodos = todos.filter((todo) => {
     return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+  })
+
+  //array dei todos da completare e da utilizzare nel titolo dinamico
+  const incompleteTodos = todos.filter((todo) => {
+    return !todo.completed
   })
 
   //svuota l'elemento html in cui sono i todos
   document.querySelector('.todo-list').innerHTML = '';
 
-  //crea nuovi elementi html per i todos risultato del filtro
+  //titolo dinamico
+  const newTitle = document.createElement('h3');
+  newTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
+  document.querySelector('.todo-list').appendChild(newTitle);
+
+  //crea nuovi elementi html per i todos risultato del filtro iniziale
   filteredTodos.forEach((todo) => {
     const todoEl = document.createElement('p');
     todoEl.textContent = todo.text;
@@ -45,18 +56,10 @@ const renderTodos = (todos, filters) => {
   })
 }
 
-//filtro richiamato al load della pagina -> si vedranno tutti i todos storati
+//filtro richiamato al load della pagina -> si vedranno tutti i todos storati e il titolo dinamico
 renderTodos(todos, filters);
 
-//Filtro dei todos da completare e da utilizzare nel titolo dinamico
-const incompleteTodos = todos.filter((todo) => {
-  return !todo.completed
-})
 
-//Titolo dinamico
-const newTitle = document.createElement('h3');
-newTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
-document.querySelector('body').appendChild(newTitle);
 
 
 //Evento button add
