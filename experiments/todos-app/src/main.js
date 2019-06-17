@@ -14,7 +14,7 @@ const todos = [{
   text: 'Fare pulizie',
   completed: true
 }, {
-  text: 'Pittare Casa',
+  text: 'Pitturare Casa',
   completed: false
 }, {
   text: 'Prendere il treno',
