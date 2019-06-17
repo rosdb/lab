@@ -1,0 +1,17 @@
+{
+  "name": "todos-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch:pug": "pug src --out dist --pretty -w"
+  },
+  "author": "Rosaria De Biasio",
+  "license": "ISC"
+}
