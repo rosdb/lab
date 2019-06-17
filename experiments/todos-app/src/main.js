@@ -32,7 +32,19 @@ document.querySelector('body').appendChild(newTitle);
 todos.forEach((todo) => {
   const newParagraph = document.createElement('p');
   newParagraph.textContent = todo.text;
-  document.querySelector('body').appendChild(newParagraph);
+  document.querySelector('.todo-list').appendChild(newParagraph);
 })
 
 
+document.querySelector('button#add').addEventListener('click', (evt) => {
+  const newTodo = document.createElement('p');
+  newTodo.textContent = 'New todo';
+  document.querySelector('.todo-list').appendChild(newTodo);
+})
+
+document.querySelector('button#delete').addEventListener('click', (evt) => {
+  const paragraphs = document.querySelectorAll('p');
+  paragraphs.forEach((paragraph) => {
+    paragraph.remove();
+  })
+})
