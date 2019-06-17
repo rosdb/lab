@@ -28,7 +28,6 @@ const filters = {
   searchText: ''
 }
 
-
 const renderTodos = (todos, filters) => {
   //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
   const filteredTodos = todos.filter((todo) => {
@@ -61,11 +60,10 @@ renderTodos(todos, filters);
 
 
 
-
 //Evento button add
 document.querySelector('button#add').addEventListener('click', (evt) => {
   const newTodo = document.createElement('p');
-  const inputText = document.querySelector('#search-text');
+  const inputText = document.querySelector('#todo-text');
   newTodo.textContent = 'New todo';
   document.querySelector('.todo-list').appendChild(newTodo);
 })
