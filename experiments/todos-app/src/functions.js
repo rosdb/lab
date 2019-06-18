@@ -55,13 +55,18 @@ const renderTodos = (todos, filters) => {
   document.querySelector('#todo-list').innerHTML = '';
 
   //titolo dinamico
-  const newTitle = document.createElement('h3');
-  newTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
-  document.querySelector('#todo-list').appendChild(newTitle);
+  document.querySelector('#todo-list').appendChild(generateSummaryDOM(incompleteTodos));
 
   //crea nuovi elementi html per i todos risultato del filtro iniziale
   filteredTodos.forEach((todo) => {
     const todoEl = generateTodoDOM(todo);
     document.querySelector('#todo-list').appendChild(todoEl);
   });
+}
+
+//renderizza summary
+const generateSummaryDOM = function (incompleteTodos) {
+  const summaryTitle = document.createElement('h3');
+  summaryTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
+  return summaryTitle;
 }
