@@ -7,9 +7,14 @@ html
     label
       b Cerca task
         input#search-text(type="text" placeholder="Filtra")
+    select#filter-by
+      option(value="byCreated") Ordina per inserimento
+      option(value="byEdited") Ordina per ultima modifica
+      option(value="alphabetical") Ordina alfabeticamente
     label
         input#hide-completed(type="checkbox")
         | Nascondi completati
+
     #todo-list
     form#todo-form
       input(type="text" placeholder="Inserisci nuovo task" name="todoText")

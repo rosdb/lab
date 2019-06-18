@@ -95,3 +95,7 @@ document.querySelector('#hide-completed').addEventListener('change', (evt) => {
   filters.hideCompleted = evt.target.checked;
   renderTodos(todos, filters);
 });
+
+document.querySelector('#filter-by').addEventListener('change', (evt) => {
+  console.log(evt.target.value);
+})
