@@ -29,6 +29,10 @@ const filters = {
   hideCompleted: false
 }
 
+//archivia l'array todos nel local storage
+const todoJSON = JSON.stringify(todos);
+localStorage.setItem('todos', todoJSON);
+
 const renderTodos = (todos, filters) => {
   //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
   let filteredTodos = todos.filter((todo) => {
