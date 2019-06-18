@@ -59,25 +59,22 @@ const renderTodos = (todos, filters) => {
 renderTodos(todos, filters);
 
 
-
-//Evento button add
-document.querySelector('button#add').addEventListener('click', (evt) => {
-  const newTodo = document.createElement('p');
-  const inputText = document.querySelector('#todo-text');
-  newTodo.textContent = 'New todo';
-  document.querySelector('.todo-list').appendChild(newTodo);
-})
-
-//Evento button delete
-document.querySelector('button#delete').addEventListener('click', (evt) => {
-  const paragraphs = document.querySelectorAll('p');
-  paragraphs.forEach((paragraph) => {
-    paragraph.remove();
-  })
-})
-
 //Evento in ascolto che filtra il testo inserito dall'utente con l'array todos
 document.querySelector('#search-text').addEventListener('input', (evt) => {
   filters.searchText = evt.target.value;
   renderTodos(todos, filters);
+})
+
+
+document.querySelector('#todo-form').addEventListener('submit', (evt) => {
+  evt.preventDefault(); //annulla il comportamento di default del browser
+
+  todos.push({
+    text: evt.target.elements.todoText.value,
+    completed: false
+  });
+
+  renderTodos(todos, filters);
+
+  evt.target.elements.todoText.value = ''; //svuota il valore dell'input dopo il submit
 })

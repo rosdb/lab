@@ -4,12 +4,11 @@ html
     title my todos app
   body
     h1 Todos App
-    h2 Your todos
     label
       b Cerca task
     input#search-text(type="text" placeholder="Filtra")
     .todo-list
-    input#todo-text(type="text" placeholder="Inserisci")
-    button#add Aggiungi
-    button#delete Cancella tutto
+    form(action="#" id="todo-form")
+      input(type="text" placeholder="Inserisci nuovo task" name="todoText")
+      button Aggiungi
     script(src="../src/main.js")
