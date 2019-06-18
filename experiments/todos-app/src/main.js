@@ -8,6 +8,8 @@ const filters = {
   hideCompleted: false
 }
 
+
+//check sui dati già presenti nel local storage
 const todosJSON = localStorage.getItem('todos');
 
 if (todosJSON !== null) {
@@ -47,7 +49,14 @@ const renderTodos = (todos, filters) => {
   //crea nuovi elementi html per i todos risultato del filtro iniziale
   filteredTodos.forEach((todo) => {
     const todoEl = document.createElement('p');
-    todoEl.textContent = todo.text;
+
+    //check sulla chiave text
+    if (todo.text.length > 0) {
+      todoEl.textContent = todo.text;
+    } else {
+      todoEl.textContent = 'Task senza nome'
+    }
+
     document.querySelector('#todo-list').appendChild(todoEl);
   });
 }
@@ -70,6 +79,8 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
     text: evt.target.elements.todoText.value,
     completed: false
   });
+
+  localStorage.setItem('todos', JSON.stringify(todos)); //salva nel local storage
 
   renderTodos(todos, filters);
 
