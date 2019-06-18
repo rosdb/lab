@@ -50,7 +50,8 @@ const generateTodoDOM = function (todo) {
   })
 
   //check sul title dei todos e setup
-  const textEl = document.createElement('span');
+  const textEl = document.createElement('a');
+  textEl.setAttribute('href', `./edit.html#${todo.id}`);
   if (todo.text.length > 0) {
     textEl.textContent = todo.text;
   } else {

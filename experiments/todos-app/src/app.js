@@ -20,15 +20,16 @@ document.querySelector('#search-text').addEventListener('input', (evt) => {
 document.querySelector('#todo-form').addEventListener('submit', (evt) => {
   evt.preventDefault(); //annulla il comportamento di default del browser
 
+  const id = uuidv4();
+
   todos.push({
-    id: uuidv4(),
+    id: id,
     text: evt.target.elements.todoText.value,
     completed: false
   });
 
   saveTodos(todos);
-
-  renderTodos(todos, filters);
+  location.assign(`./edit.html#${id}`); //redirect
 
   evt.target.elements.todoText.value = ''; //svuota il valore dell'input dopo il submit
 });
