@@ -1,25 +1,4 @@
-const todos = [{
-  text: 'Fare la spesa',
-  completed: true
-}, {
-  text: 'Comprare il vestito',
-  completed: false
-}, {
-  text: 'Fare sport',
-  completed: false
-}, {
-  text: 'Studiare',
-  completed: true
-}, {
-  text: 'Fare pulizie',
-  completed: true
-}, {
-  text: 'Pitturare Casa',
-  completed: false
-}, {
-  text: 'Prendere il treno',
-  completed: false
-}]
+let todos = []
 
 //FILTRO
 
@@ -29,9 +8,12 @@ const filters = {
   hideCompleted: false
 }
 
-//archivia l'array todos nel local storage
-const todoJSON = JSON.stringify(todos);
-localStorage.setItem('todos', todoJSON);
+const todosJSON = localStorage.getItem('todos');
+
+if (todosJSON !== null) {
+  todos = JSON.parse(todosJSON)
+}
+
 
 const renderTodos = (todos, filters) => {
   //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
