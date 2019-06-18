@@ -21,6 +21,7 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
   evt.preventDefault(); //annulla il comportamento di default del browser
 
   todos.push({
+    id: uuidv4(),
     text: evt.target.elements.todoText.value,
     completed: false
   });
