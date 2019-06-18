@@ -14,6 +14,17 @@ const saveTodos = function () {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+
+//rimuove i todos
+const removeTodo = function (id) {
+  const todoIndex = todos.findIndex(function (todo) {
+    return todo.id === id;
+  })
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1);
+  }
+}
+
 //crea todo nel DOM
 const generateTodoDOM = function (todo) {
   const todoEl = document.createElement('div');
@@ -35,6 +46,11 @@ const generateTodoDOM = function (todo) {
   const button = document.createElement('button');
   button.textContent = 'x';
   todoEl.appendChild(button);
+  button.addEventListener('click', (evt) => {
+    removeTodo(todo.id);
+    saveTodos(todos);
+    renderTodos(todos, filters);
+  })
 
   return todoEl;
 }
