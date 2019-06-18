@@ -25,34 +25,45 @@ const todos = [{
 
 //store dello user input
 const filters = {
-  searchText: ''
+  searchText: '',
+  hideCompleted: false
 }
 
 const renderTodos = (todos, filters) => {
   //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
-  const filteredTodos = todos.filter((todo) => {
+  let filteredTodos = todos.filter((todo) => {
     return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+  });
+
+  //array filtrato che nasconde i todo completati
+  filteredTodos = filteredTodos.filter((todo) => {
+    if (filters.hideCompleted) {
+      return !todo.completed
+    } else {
+      return true
+    }
   })
 
   //array dei todos da completare e da utilizzare nel titolo dinamico
   const incompleteTodos = todos.filter((todo) => {
     return !todo.completed
-  })
+  });
+
 
   //svuota l'elemento html in cui sono i todos
-  document.querySelector('.todo-list').innerHTML = '';
+  document.querySelector('#todo-list').innerHTML = '';
 
   //titolo dinamico
   const newTitle = document.createElement('h3');
   newTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
-  document.querySelector('.todo-list').appendChild(newTitle);
+  document.querySelector('#todo-list').appendChild(newTitle);
 
   //crea nuovi elementi html per i todos risultato del filtro iniziale
   filteredTodos.forEach((todo) => {
     const todoEl = document.createElement('p');
     todoEl.textContent = todo.text;
-    document.querySelector('.todo-list').appendChild(todoEl);
-  })
+    document.querySelector('#todo-list').appendChild(todoEl);
+  });
 }
 
 //filtro richiamato al load della pagina -> si vedranno tutti i todos storati e il titolo dinamico
@@ -63,7 +74,7 @@ renderTodos(todos, filters);
 document.querySelector('#search-text').addEventListener('input', (evt) => {
   filters.searchText = evt.target.value;
   renderTodos(todos, filters);
-})
+});
 
 
 document.querySelector('#todo-form').addEventListener('submit', (evt) => {
@@ -77,4 +88,10 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
   renderTodos(todos, filters);
 
   evt.target.elements.todoText.value = ''; //svuota il valore dell'input dopo il submit
-})
+});
+
+//Evento che nasconde i todos completati
+document.querySelector('#hide-completed').addEventListener('change', (evt) => {
+  filters.hideCompleted = evt.target.checked;
+  renderTodos(todos, filters);
+});

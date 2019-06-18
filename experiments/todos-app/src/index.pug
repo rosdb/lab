@@ -6,9 +6,13 @@ html
     h1 Todos App
     label
       b Cerca task
-    input#search-text(type="text" placeholder="Filtra")
-    .todo-list
-    form(action="#" id="todo-form")
+        input#search-text(type="text" placeholder="Filtra")
+    label
+        input#hide-completed(type="checkbox")
+        | Nascondi completati
+    #todo-list
+    form#todo-form
       input(type="text" placeholder="Inserisci nuovo task" name="todoText")
       button Aggiungi
+
     script(src="../src/main.js")
