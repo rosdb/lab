@@ -16,14 +16,25 @@ const saveTodos = function () {
 
 //crea todo nel DOM
 const generateTodoDOM = function (todo) {
-  const todoEl = document.createElement('p');
+  const todoEl = document.createElement('div');
 
-  //check sulla chiave text
+  const checkboxEl = document.createElement('input');
+  checkboxEl.setAttribute('type', 'checkbox');
+  todoEl.appendChild(checkboxEl);
+
+  //check sul title dei todos e setup
+  const textEl = document.createElement('span');
   if (todo.text.length > 0) {
-    todoEl.textContent = todo.text;
+    textEl.textContent = todo.text;
   } else {
-    todoEl.textContent = 'Task senza nome'
+    textEl.textContent = 'Task senza nome'
   }
+  todoEl.appendChild(textEl);
+
+  //bottone delete
+  const button = document.createElement('button');
+  button.textContent = 'x';
+  todoEl.appendChild(button);
 
   return todoEl;
 }
