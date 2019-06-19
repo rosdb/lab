@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-contactlab": "^2.0.2",
     "live-server": "^1.2.1",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-contactlab": "^2.0.2"
   },
   "scripts": {
     "watch:pug": "pug src --out dist --pretty -w",
