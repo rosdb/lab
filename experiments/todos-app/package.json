@@ -8,9 +8,13 @@
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-contactlab": "^2.0.2"
+  },
   "scripts": {
-    "watch:pug": "pug src --out dist --pretty -w"
+    "watch:pug": "pug src --out dist --pretty -w",
+    "lint:js": "eslint ./src/**/*.js"
   },
   "author": "Rosaria De Biasio",
   "license": "ISC"

@@ -5,23 +5,23 @@ const filters = {
   searchText: '',
   hideCompleted: false,
   sortBy: 'byEdited'
-}
+};
 
 //filtro richiamato al load della pagina -> si vedranno tutti i todos storati e il titolo dinamico
 renderTodos(todos, filters);
 
 
 //Evento in ascolto che filtra il testo inserito dall'utente con l'array todos
-document.querySelector('#search-text').addEventListener('input', (evt) => {
+document.querySelector('#search-text').addEventListener('input', evt => {
   filters.searchText = evt.target.value;
   renderTodos(todos, filters);
 });
 
 
-document.querySelector('#todo-form').addEventListener('submit', (evt) => {
+document.querySelector('#todo-form').addEventListener('submit', evt => {
   evt.preventDefault(); //annulla il comportamento di default del browser
 
-  const timestamp = moment().valueOf()
+  const timestamp = moment().valueOf();
   const id = uuidv4();
 
   todos.push({
@@ -40,22 +40,22 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
 });
 
 //Evento che nasconde i todos completati
-document.querySelector('#hide-completed').addEventListener('change', (evt) => {
+document.querySelector('#hide-completed').addEventListener('change', evt => {
   filters.hideCompleted = evt.target.checked;
   renderTodos(todos, filters);
 });
 
-document.querySelector('#filter-by').addEventListener('change', (evt) => {
+document.querySelector('#filter-by').addEventListener('change', evt => {
   filters.sortBy = evt.target.value;
   renderTodos(todos, filters);
-})
+});
 
-window.addEventListener('storage', (evt) => {
+window.addEventListener('storage', evt => {
   if (evt.key === 'todos') {
     todos = JSON.parse(evt.newValue);
     renderTodos(todos, filters);
   }
-})
+});
 
 
 
