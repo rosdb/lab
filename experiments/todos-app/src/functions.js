@@ -9,6 +9,12 @@ const getSavedTodos = function () {
   }
 }
 
+//prende la data in quel momento
+const getTime = function () {
+  const date = moment().fromNow();
+  return date.toString();
+}
+
 //salva i todos nel local storage
 const saveTodos = function () {
   localStorage.setItem('todos', JSON.stringify(todos));
@@ -114,3 +120,4 @@ const generateSummaryDOM = function (incompleteTodos) {
   summaryTitle.textContent = `Hai ${incompleteTodos.length} attività incomplete`;
   return summaryTitle;
 }
+

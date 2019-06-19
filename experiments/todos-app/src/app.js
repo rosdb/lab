@@ -26,7 +26,9 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
     id: id,
     text: evt.target.elements.todoText.value,
     description: '',
-    completed: false
+    completed: false,
+    createdAt: `Data di creazione: ${getTime()}`,
+    updatedAt: ''
   });
 
   saveTodos(todos);
