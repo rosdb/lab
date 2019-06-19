@@ -5,7 +5,7 @@ const todoBody = document.querySelector('#todo-body');
 const removeTodoEl = document.querySelector('#remove-btn');
 const todoId = location.hash.substring(1);
 
-const todo = todos.find((todo) => {
+let todo = todos.find((todo) => {
   return todo.id === todoId;
 })
 
@@ -30,6 +30,21 @@ removeTodoEl.addEventListener('click', (evt) => {
   removeTodo(todo.id);
   saveTodos(todos);
   location.assign('./index.html');
+})
+
+window.addEventListener('storage', (evt) => {
+  if (evt.key === 'todos') {
+    todos = JSON.parse(evt.newValue);
+    todo = todos.find((todo) => {
+      return todo.id === todoId;
+    })
+    if (todo === undefined) {
+      location.assign('./index.html')
+    }
+
+    todoTitle.value = todo.text;
+    todoBody.value = todo.description;
+  }
 })
 
 

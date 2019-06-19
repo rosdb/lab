@@ -44,3 +44,10 @@ document.querySelector('#hide-completed').addEventListener('change', (evt) => {
 document.querySelector('#filter-by').addEventListener('change', (evt) => {
   console.log(evt.target.value);
 })
+
+window.addEventListener('storage', (evt) => {
+  if (evt.key === 'todos') {
+    todos = JSON.parse(evt.newValue);
+    renderTodos(todos, filters);
+  }
+})
