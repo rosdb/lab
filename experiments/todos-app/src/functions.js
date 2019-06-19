@@ -9,11 +9,6 @@ const getSavedTodos = function () {
   }
 }
 
-//prende la data in quel momento
-const getTime = function () {
-  const date = moment().fromNow();
-  return date.toString();
-}
 
 //salva i todos nel local storage
 const saveTodos = function () {
@@ -158,3 +153,7 @@ const generateSummaryDOM = function (incompleteTodos) {
   return summaryTitle;
 }
 
+// Generate the last edited message
+const generateLastEdited = function (timestamp) {
+  return `Last edited ${moment(timestamp).fromNow()}`
+}

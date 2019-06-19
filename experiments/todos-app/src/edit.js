@@ -16,18 +16,20 @@ if (todo === undefined) {
 
 todoTitle.value = todo.text;
 todoBody.value = todo.description;
-lastEditedMsg.textContent = todo.updatedAt;
+lastEditedMsg.textContent = generateLastEdited(todo.updatedAt);
 
 todoTitle.addEventListener('change', (evt) => {
   todo.text = evt.target.value;
-  todo.updatedAt = `Ultima modifica: ${getTime()}`;
+  todo.updatedAt = moment().valueOf()
+  lastEditedMsg.textContent = generateLastEdited(todo.updatedAt);
 
   saveTodos(todos);
 })
 
 todoBody.addEventListener('change', (evt) => {
   todo.description = evt.target.value;
-  todo.updatedAt = `Ultima modifica: ${getTime()}`;
+  todo.updatedAt = moment().valueOf()
+  lastEditedMsg.textContent = generateLastEdited(todo.updatedAt);
 
   saveTodos(todos);
 })
@@ -49,7 +51,7 @@ window.addEventListener('storage', (evt) => {
     }
     todoTitle.value = todo.text;
     todoBody.value = todo.description;
-    lastEditedMsg.textContent = todo.updatedAt;
+    lastEditedMsg.textContent = generateLastEdited(todo.updatedAt)
   }
 })
 

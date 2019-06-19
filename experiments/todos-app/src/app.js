@@ -21,6 +21,7 @@ document.querySelector('#search-text').addEventListener('input', (evt) => {
 document.querySelector('#todo-form').addEventListener('submit', (evt) => {
   evt.preventDefault(); //annulla il comportamento di default del browser
 
+  const timestamp = moment().valueOf()
   const id = uuidv4();
 
   todos.push({
@@ -28,8 +29,8 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
     text: evt.target.elements.todoText.value,
     description: '',
     completed: false,
-    createdAt: `Data di creazione: ${getTime()}`,
-    updatedAt: ''
+    createdAt: timestamp,
+    updatedAt: timestamp
   });
 
   saveTodos(todos);
