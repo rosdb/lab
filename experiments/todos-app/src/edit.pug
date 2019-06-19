@@ -2,6 +2,13 @@ doctype
 html
   head
   body
-    a(href="./index.html") Ritorna alla home
-
+    p
+      a(href="./index.html") Torna alla home &rarr;
+    div
+      input#todo-title(placeholder="Titolo")
+    div
+      textarea#todo-body(placeholder="Descrizione task")
+    button#remove-btn Cancella task
+    script(src="../src/functions.js")
+    script(src="../src/edit.js")
 

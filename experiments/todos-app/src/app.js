@@ -25,6 +25,7 @@ document.querySelector('#todo-form').addEventListener('submit', (evt) => {
   todos.push({
     id: id,
     text: evt.target.elements.todoText.value,
+    description: '',
     completed: false
   });
 
