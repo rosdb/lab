@@ -1,5 +1,5 @@
 //check sui dati già presenti nel local storage
-const getSavedTodos = function () {
+const getSavedTodos = () => {
   const todosJSON = localStorage.getItem('todos');
 
   if (todosJSON !== null) {
@@ -11,13 +11,13 @@ const getSavedTodos = function () {
 
 
 //salva i todos nel local storage
-const saveTodos = function () {
+const saveTodos = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 
 //rimuove i todos
-const removeTodo = function (id) {
+const removeTodo = (id) => {
   const todoIndex = todos.findIndex(function (todo) {
     return todo.id === id;
   })
@@ -27,7 +27,7 @@ const removeTodo = function (id) {
 }
 
 //cambia stato completed
-const toggleTodo = function (id) {
+const toggleTodo = (id) => {
   const todo = todos.find(function (todo) {
     return todo.id === id;
   })
@@ -37,7 +37,7 @@ const toggleTodo = function (id) {
 }
 
 //crea todo nel DOM
-const generateTodoDOM = function (todo) {
+const generateTodoDOM = (todo) => {
   const todoEl = document.createElement('div');
 
   const checkboxEl = document.createElement('input');
