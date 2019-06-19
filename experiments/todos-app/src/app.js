@@ -51,3 +51,20 @@ window.addEventListener('storage', (evt) => {
     renderTodos(todos, filters);
   }
 })
+
+const date1 = new Date('Nov 10 1989');
+const date2 = new Date('May 11 1953');
+const timestamp1 = date1.getTime();
+const timestamp2 = date2.getTime();
+
+const print = function (data1, data2) {
+  if (data1 > data2) {
+    return `${date2.toString()}\n ${date1.toString()}`
+  } else {
+    return `${date1.toString()}\n ${date2.toString()}`
+  }
+}
+
+console.log(print(timestamp1, timestamp2));
+
+
