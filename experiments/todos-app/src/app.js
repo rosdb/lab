@@ -3,7 +3,8 @@ let todos = getSavedTodos();
 //store dello user input
 const filters = {
   searchText: '',
-  hideCompleted: false
+  hideCompleted: false,
+  sortBy: 'byEdited'
 }
 
 //filtro richiamato al load della pagina -> si vedranno tutti i todos storati e il titolo dinamico
@@ -44,7 +45,8 @@ document.querySelector('#hide-completed').addEventListener('change', (evt) => {
 });
 
 document.querySelector('#filter-by').addEventListener('change', (evt) => {
-  console.log(evt.target.value);
+  filters.sortBy = evt.target.value;
+  renderTodos(todos, filters);
 })
 
 window.addEventListener('storage', (evt) => {

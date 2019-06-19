@@ -78,9 +78,46 @@ const generateTodoDOM = function (todo) {
   return todoEl;
 }
 
+//ordina i todo in base all'ultima modifica
+const sortTodos = function (todos, sortBy) {
+  if (sortBy === 'byEdited') {
+    return todos.sort(function (a, b) {
+      if (a.updatedAt > b.updatedAt) {
+        return -1
+      } else if (a.updatedAt < b.updatedAt) {
+        return 1
+      } else {
+        return 0
+      }
+    })
+  } else if (sortBy === 'byCreated') {
+    return todos.sort(function (a, b) {
+      if (a.createdAt > b.createdAt) {
+        return -1
+      } else if (a.createdAt < b.createdAt) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+  } else if (sortBy === 'alphabetical') {
+    return todos.sort(function (a, b) {
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return -1
+      } else if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return 1
+      } else {
+        return 0
+      }
+    }
+  } else {
+    return todos;
+  }
+}
 
 //renderizza todo
 const renderTodos = (todos, filters) => {
+  todos = sortTodos(todos, filters.sortBy);
   //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
   let filteredTodos = todos.filter((todo) => {
     return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
