@@ -2,7 +2,13 @@
 // eslint-disable-next-line no-unused-vars
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem('todos');
-  return todosJSON ? JSON.parse(todosJSON) : [];
+
+  try {
+    return todosJSON ? JSON.parse(todosJSON) : [];
+  } catch (err) {
+    return [];
+  }
+
 };
 
 
@@ -22,7 +28,7 @@ const removeTodo = id => {
 //cambia stato completed
 const toggleTodo = id => {
   const todo = todos.find(todo => todo.id === id);
-  if (!todo) {
+  if (todo) {
     todo.completed = !todo.completed;
   }
 };
