@@ -39,7 +39,7 @@ document.querySelector('#todo-form').addEventListener('submit', evt => {
   evt.target.elements.todoText.value = ''; //svuota il valore dell'input dopo il submit
 });
 
-//Evento che nasconde i todos completati
+
 document.querySelector('#hide-completed').addEventListener('change', evt => {
   filters.hideCompleted = evt.target.checked;
   renderTodos(todos, filters);

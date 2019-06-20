@@ -1,25 +1,17 @@
-//check sui dati già presenti nel local storage
-
 
 // eslint-disable-next-line no-unused-vars
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem('todos');
-
-  if (todosJSON !== null) {
-    return JSON.parse(todosJSON);
-  } else {
-    return [];
-  }
+  return todosJSON !== null ? JSON.parse(todosJSON) : [];
 };
 
 
-//salva i todos nel local storage
 const saveTodos = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 
-//rimuove i todos
+
 const removeTodo = id => {
   const todoIndex = todos.findIndex(todo => todo.id === id);
   if (todoIndex > -1) {
@@ -35,7 +27,7 @@ const toggleTodo = id => {
   }
 };
 
-//crea todo nel DOM
+
 const generateTodoDOM = todo => {
   const todoEl = document.createElement('div');
 
@@ -49,7 +41,7 @@ const generateTodoDOM = todo => {
     renderTodos(todos, filters);
   });
 
-  //check sul title dei todos e setup
+
   const textEl = document.createElement('a');
   textEl.setAttribute('href', `./edit.html#${todo.id}`);
   if (todo.text.length > 0) {
@@ -59,7 +51,7 @@ const generateTodoDOM = todo => {
   }
   todoEl.appendChild(textEl);
 
-  //bottone delete
+
   const button = document.createElement('button');
   button.textContent = 'x';
   todoEl.appendChild(button);
@@ -72,7 +64,7 @@ const generateTodoDOM = todo => {
   return todoEl;
 };
 
-//ordina i todo in base all'ultima modifica
+
 const sortTodos = (todos, sortBy) => {
   if (sortBy === 'byEdited') {
     return todos.sort((a, b) => {
@@ -109,10 +101,10 @@ const sortTodos = (todos, sortBy) => {
   }
 };
 
-//renderizza todo
+
 const renderTodos = (todos, filters) => {
   const elements = sortTodos(todos, filters.sortBy);
-  //array risultato dei todos filtrati con il testo inserito nell'input e storato nella const filters
+
   let filteredTodos = elements.filter(todo => todo.text.toLowerCase().includes(filters.searchText.toLowerCase()));
 
   //array filtrato che nasconde i todo completati
@@ -148,7 +140,6 @@ const generateSummaryDOM = function (incompleteTodos) {
   return summaryTitle;
 };
 
-// Generate the last edited message
 
 // eslint-disable-next-line no-unused-vars
 const generateLastEdited = function (timestamp) {
