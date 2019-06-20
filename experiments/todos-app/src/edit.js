@@ -8,7 +8,7 @@ const lastEditedMsg = document.querySelector('#last-edited');
 
 let todo = todos.find(todo => todo.id === todoId);
 
-if (typeof todo === 'undefined') {
+if (!todo) {
   location.assign('./index.html');
 }
 
@@ -42,7 +42,7 @@ window.addEventListener('storage', evt => {
   if (evt.key === 'todos') {
     todos = JSON.parse(evt.newValue);
     todo = todos.find(todo => todo.id === todoId);
-    if (typeof todo === 'undefined') {
+    if (!todo) {
       location.assign('./index.html');
     }
     todoTitle.value = todo.text;
