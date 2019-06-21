@@ -6,7 +6,6 @@ puzzleEl.textContent = game1.getPuzzle();
 guessesEl.textContent = game1.statusMessage();
 
 
-
 window.addEventListener('keypress', evt => {
   const guess = String.fromCharCode(evt.charCode);
   game1.makeGuess(guess);
