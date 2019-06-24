@@ -13,38 +13,33 @@ window.addEventListener('keypress', evt => {
   guessesEl.textContent = game1.statusMessage;
 });
 
+getPuzzle((error, puzzle) => {
+  if (error) {
+    // eslint-disable-next-line no-console
+    console.log(`${error}`);
+  } else {
+    // eslint-disable-next-line no-console
+    console.log(puzzle);
+  }
+});
+
+
+
 //HTTP request
-const request = new XMLHttpRequest();
+// const countryRequest = new XMLHttpRequest();
 
-request.addEventListener('readystatechange', evt => {
-  if (evt.target.readyState === 4 && evt.target.status === 200) {
-    const data = JSON.parse(evt.target.responseText);
-    // eslint-disable-next-line no-console
-    console.log(data);
-  } else if (evt.target.readyState === 4) {
-    // eslint-disable-next-line no-console
-    console.log('error');
-  }
-});
+// countryRequest.addEventListener('readystatechange', evt => {
+//   if (evt.target.readyState === 4 && evt.target.status === 200) {
+//     const data = JSON.parse(evt.target.responseText);
+//     const countryCode = 'IT';
+//     const country = data.find(el => el.alpha2Code === countryCode);
+//     // eslint-disable-next-line no-console
+//     console.log(country.name);
+//   } else if (evt.target.readyState === 4) {
+//     // eslint-disable-next-line no-console
+//     console.log('error');
+//   }
+// });
 
-request.open('GET', 'http://puzzle.mead.io/puzzle');
-request.send();
-
-
-const countryRequest = new XMLHttpRequest();
-
-countryRequest.addEventListener('readystatechange', evt => {
-  if (evt.target.readyState === 4 && evt.target.status === 200) {
-    const data = JSON.parse(evt.target.responseText);
-    const countryCode = 'IT';
-    const country = data.find(el => el.alpha2Code === countryCode);
-    // eslint-disable-next-line no-console
-    console.log(country.name);
-  } else if (evt.target.readyState === 4) {
-    // eslint-disable-next-line no-console
-    console.log('error');
-  }
-});
-
-countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all');
-countryRequest.send();
+//countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all');
+//countryRequest.send();
