@@ -13,6 +13,8 @@ window.addEventListener('keypress', evt => {
   guessesEl.textContent = game1.statusMessage;
 });
 
+//HTTP requests
+
 getPuzzle((error, puzzle) => {
   if (error) {
     // eslint-disable-next-line no-console
@@ -24,22 +26,12 @@ getPuzzle((error, puzzle) => {
 });
 
 
-
-//HTTP request
-// const countryRequest = new XMLHttpRequest();
-
-// countryRequest.addEventListener('readystatechange', evt => {
-//   if (evt.target.readyState === 4 && evt.target.status === 200) {
-//     const data = JSON.parse(evt.target.responseText);
-//     const countryCode = 'IT';
-//     const country = data.find(el => el.alpha2Code === countryCode);
-//     // eslint-disable-next-line no-console
-//     console.log(country.name);
-//   } else if (evt.target.readyState === 4) {
-//     // eslint-disable-next-line no-console
-//     console.log('error');
-//   }
-// });
-
-//countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all');
-//countryRequest.send();
+getCountryDetails('IT', (error, country) => {
+  if (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+  } else {
+    // eslint-disable-next-line no-console
+    console.log(country.name);
+  }
+});
