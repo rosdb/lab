@@ -8,8 +8,7 @@ const getPuzzle = callback => {
       // eslint-disable-next-line no-undefined
       callback(undefined, data.puzzle);
     } else if (evt.target.readyState === 4) {
-      // eslint-disable-next-line no-undefined
-      callback('Erroreeee!', undefined);
+      callback('Erroreeee!');
     }
   });
 

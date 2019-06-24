@@ -18,7 +18,7 @@ window.addEventListener('keypress', evt => {
 getPuzzle((error, puzzle) => {
   if (error) {
     // eslint-disable-next-line no-console
-    console.log(`${error}`);
+    console.log(error);
   } else {
     // eslint-disable-next-line no-console
     console.log(puzzle);
