@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const puzzleEl = document.querySelector('#puzzle');
 const guessesEl = document.querySelector('#guesses');
 const game1 = new Hangman('Cat', 2);
@@ -15,23 +16,17 @@ window.addEventListener('keypress', evt => {
 
 //HTTP requests
 
-getPuzzle((error, puzzle) => {
-  if (error) {
-    // eslint-disable-next-line no-console
-    console.log(error);
-  } else {
-    // eslint-disable-next-line no-console
-    console.log(puzzle);
-  }
+getPuzzle('2').then(puzzle => {
+  console.log(puzzle);
+}, error => {
+  console.log(error);
 });
 
 
-getCountryDetails('IT', (error, country) => {
-  if (error) {
-    // eslint-disable-next-line no-console
-    console.log(error);
-  } else {
-    // eslint-disable-next-line no-console
-    console.log(country.name);
-  }
+getCountryDetails('IT').then(country => {
+  // eslint-disable-next-line no-console
+  console.log(country.name);
+}, error => {
+  // eslint-disable-next-line no-console
+  console.log(error);
 });
