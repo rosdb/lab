@@ -1,14 +1,17 @@
 doctype
 html
   head
+    link(href="../src/styles/style.css" rel="stylesheet")
+    link(href="../public/assets/images/favicon.png" rel="icon")
     title hangman game
   body
-    p#puzzle
-    p#guesses
-    button#reset Reset
-    script(src="../src/requests.js")
-    script(src="../src/hangman.js")
-    script(src="../src/app.js")
+    div
+      #puzzle.puzzle
+      p#guesses
+      button#reset.button Reset
+    script(src="../src/scripts/requests.js")
+    script(src="../src/scripts/hangman.js")
+    script(src="../src/scripts/app.js")
 
 
 
