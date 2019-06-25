@@ -18,15 +18,13 @@ window.addEventListener('keypress', evt => {
 
 getPuzzle('2').then(puzzle => {
   console.log(puzzle);
-}, error => {
+}).catch(error => {
   console.log(error);
 });
 
 
 getCountryDetails('IT').then(country => {
-  // eslint-disable-next-line no-console
-  console.log(country.name);
-}, error => {
-  // eslint-disable-next-line no-console
+  console.log(country);
+}).catch(error => {
   console.log(error);
 });
