@@ -23,7 +23,7 @@ getPuzzle('2').then(puzzle => {
 });
 
 
-getCountryDetails('IT').then(country => {
+getCountry('IT').then(country => {
   console.log(country);
 }).catch(error => {
   console.log(error);

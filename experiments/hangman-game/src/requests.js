@@ -9,7 +9,7 @@ const getPuzzle = wordCount => fetch(`http://puzzle.mead.io/puzzle?wordCount=${w
 
 
 
-const getCountryDetails = code => fetch('http://restcountries.eu/rest/v2/all').then(response => {
+const getCountry = code => fetch('http://restcountries.eu/rest/v2/all').then(response => {
   if (response.status === 200) {
     return response.json();
   } else {
