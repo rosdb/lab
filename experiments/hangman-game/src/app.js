@@ -28,3 +28,11 @@ getCountry('IT').then(country => {
 }).catch(error => {
   console.log(error);
 });
+
+getLocation().then(location => {
+  console.log(`You are currently in ${location.city}, ${location.region} - ${location.country}`);
+}).catch(error => {
+  console.log(error);
+});
+
+
