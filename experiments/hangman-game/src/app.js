@@ -23,14 +23,8 @@ getPuzzle('2').then(puzzle => {
 });
 
 
-getCountry('IT').then(country => {
+getLocation().then(location => getCountry(location.country)).then(country => {
   console.log(country);
-}).catch(error => {
-  console.log(error);
-});
-
-getLocation().then(location => {
-  console.log(`You are currently in ${location.city}, ${location.region} - ${location.country}`);
 }).catch(error => {
   console.log(error);
 });
