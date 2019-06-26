@@ -3,13 +3,6 @@ const puzzleEl = document.querySelector('#puzzle');
 const guessesEl = document.querySelector('#guesses');
 let game1;
 
-
-window.addEventListener('keypress', evt => {
-  const guess = String.fromCharCode(evt.charCode);
-  game1.makeGuess(guess);
-  render();
-});
-
 const render = () => {
   puzzleEl.innerHTML = '';
   guessesEl.textContent = game1.statusMessage;
@@ -21,8 +14,16 @@ const render = () => {
   });
 };
 
+window.addEventListener('keypress', evt => {
+  const guess = String.fromCharCode(evt.charCode);
+  game1.makeGuess(guess);
+  render();
+});
+
 const startGame = async () => {
+  // eslint-disable-next-line no-undef
   const puzzle = await getPuzzle('2');
+  // eslint-disable-next-line no-undef
   game1 = new Hangman(puzzle, 5);
   render();
 };
@@ -37,13 +38,8 @@ startGame();
 //   console.log(error);
 // });
 
-
 // getCurrentCountry().then(country => {
 //   console.log(country);
 // }).catch(error => {
 //   console.log(error);
 // });
-
-
-
-

@@ -23,7 +23,8 @@
   },
   "scripts": {
     "watch:pug": "pug src --out dist --pretty -w",
-    "lint:js": "eslint ./src/**/*.js"
+    "lint:js": "eslint ./src/**/*.js",
+    "lint:fix": "eslint . --fix"
   },
   "author": "Rosaria De Biasio",
   "license": "ISC"

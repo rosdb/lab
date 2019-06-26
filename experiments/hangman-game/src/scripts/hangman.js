@@ -8,7 +8,9 @@ class Hangman {
   }
 
   updateStatus() {
-    const finished = this.word.every(letter => this.guessedLetters.includes(letter) || letter === ' ');
+    const finished = this.word.every(
+      letter => this.guessedLetters.includes(letter) || letter === ' '
+    );
 
     if (this.remainingGuesses === 0) {
       this.status = 'failed';
@@ -22,11 +24,11 @@ class Hangman {
   get statusMessage() {
     if (this.status === 'playing') {
       return `Guesses left: ${this.remainingGuesses}`;
-    } else if (this.status === 'failed') {
-      return `Nice try! The word was "${this.word.join('')}"`;
-    } else {
-      return 'Great work! You guessed the word.';
     }
+    if (this.status === 'failed') {
+      return `Nice try! The word was "${this.word.join('')}"`;
+    }
+    return 'Great work! You guessed the word.';
   }
 
   get puzzle() {
@@ -64,4 +66,3 @@ class Hangman {
     this.updateStatus();
   }
 }
-
