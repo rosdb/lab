@@ -1,6 +1,5 @@
 {
-  "extends": "contactlab",
-  "rules": {
-    "no-undef": 0
-  }
+  "extends": [
+    "wesbos"
+  ]
 }
