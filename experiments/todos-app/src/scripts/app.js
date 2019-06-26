@@ -28,7 +28,7 @@ document.querySelector('#todo-form').addEventListener('submit', evt => {
 
   todos.push({
     id: id,
-    text: evt.target.elements.todoText.value,
+    text: evt.target.elements.todoText.value.trim(),
     description: '',
     completed: false,
     createdAt: timestamp,

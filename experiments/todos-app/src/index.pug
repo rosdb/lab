@@ -2,27 +2,32 @@ doctype
 html
   head
     title my todos app
+    link(href="../src/styles/style.css" rel="stylesheet")
+    link(href="../public/assets/images/favicon.png?v=1" rel="icon")
   body
-    h1 Todos App
-    label
-      b Cerca task
-        input#search-text(type="text" placeholder="Filtra")
-    select#filter-by
-      option(value="byCreated") Ordina per inserimento
-      option(value="byEdited") Ordina per ultima modifica
-      option(value="alphabetical") Ordina alfabeticamente
-    label
-        input#hide-completed(type="checkbox")
-        | Nascondi completati
+    header.header
+      .container
+        h1.header__title Todos App
+        h2.header__subtitle What do you need to do?
+    .actions
+      .actions__container
+        input#search-text.input(type="text" placeholder="Search")
+        select#filter-by.dropdown
+          option(value="byCreated") Order by Created
+          option(value="byEdited") Order by Edited
+          option(value="alphabetical") Order Alphabetical
+        label.checkbox
+            input#hide-completed(type="checkbox")
+            | Hide completed
+    .container
+      #todo-list
+      form#todo-form
+        input.input(type="text" placeholder="Add new todo" name="todoText")
+        button.button Add
 
-    #todo-list
-    form#todo-form
-      input(type="text" placeholder="Inserisci nuovo task" name="todoText")
-      button Aggiungi
-
-    script(src="../src/uuidv4.js")
+    script(src="../src/scripts/uuidv4.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js")
-    script(src="../src/functions.js")
-    script(src="../src/app.js")
+    script(src="../src/scripts/functions.js")
+    script(src="../src/scripts/app.js")
 
 
