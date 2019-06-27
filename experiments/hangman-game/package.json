@@ -8,6 +8,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.6",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
     "eslint": "^5.16.0",
@@ -30,8 +31,7 @@
     "lint:js": "eslint ./src/**/*.js",
     "lint:fix": "eslint . --fix",
     "serve": "live-server",
-    "webpack": "webpack",
-    "build": "babel src/scripts --out-file dist/build.js --presets env --watch"
+    "build": "webpack"
   },
   "author": "Rosaria De Biasio",
   "license": "ISC"
