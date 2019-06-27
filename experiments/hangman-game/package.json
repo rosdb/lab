@@ -5,6 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-eslint": "^9.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -24,7 +26,8 @@
   "scripts": {
     "watch:pug": "pug src --out dist --pretty -w",
     "lint:js": "eslint ./src/**/*.js",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "serve": "live-server"
   },
   "author": "Rosaria De Biasio",
   "license": "ISC"
