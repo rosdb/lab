@@ -66,3 +66,5 @@ class Hangman {
     this.updateStatus();
   }
 }
+
+export { Hangman as default };
