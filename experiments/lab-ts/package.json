@@ -1,0 +1,19 @@
+{
+  "name": "lab-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server",
+    "build": "tsc app.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
