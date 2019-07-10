@@ -1,0 +1,10 @@
+.Coins {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.Coin {
+  width: 200px;
+  padding-bottom: 15px;
+}
