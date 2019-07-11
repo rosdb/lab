@@ -17,10 +17,10 @@ class CoinFlipper extends Component {
     let rand = Boolean(Math.round(Math.random()));
     this.setState(st => {
       return {
-        flipsNum: this.state.flipsNum + 1,
+        flipsNum: st.flipsNum + 1,
         isHead: rand,
-        headsNum: this.state.headsNum + (rand ? 1 : 0),
-        tailsNum: this.state.tailsNum + (!rand ? 1 : 0)
+        headsNum: st.headsNum + (rand ? 1 : 0),
+        tailsNum: st.tailsNum + (!rand ? 1 : 0)
       }
     })
   }
