@@ -1,6 +1,0 @@
-{
-  "extends": "contactlab",
-  "rules": {
-    "no-undef": 0
-  }
-}

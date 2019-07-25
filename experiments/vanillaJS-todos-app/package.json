@@ -1,20 +1,13 @@
 {
-  "name": "todos-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-contactlab": "^2.0.2",
-    "live-server": "^1.2.1",
-    "pug": "^2.0.3",
-    "pug-cli": "^1.0.0-alpha6"
-  },
+  "private": true,
+  "name": "js-todos-app",
+  "version": "0.1.0",
   "scripts": {
-    "watch:pug": "pug src --out dist --pretty -w",
-    "lint:js": "eslint ./src/**/*.js"
+    "watch:pug": "pug src --out dist --pretty --watch"
   },
-  "author": "Rosaria De Biasio",
-  "license": "ISC"
+  "devDependencies": {
+    "live-server": "1.2.1",
+    "pug": "2.0.4",
+    "pug-cli": "1.0.0-alpha6"
+  }
 }
