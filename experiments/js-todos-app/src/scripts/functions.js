@@ -9,15 +9,11 @@ const getSavedTodos = () => {
   } catch (err) {
     return [];
   }
-
 };
-
 
 const saveTodos = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
-
-
 
 const removeTodo = id => {
   const todoIndex = todos.findIndex(todo => todo.id === id);
@@ -33,7 +29,6 @@ const toggleTodo = id => {
     todo.completed = !todo.completed;
   }
 };
-
 
 const generateTodoDOM = todo => {
   const todoEl = document.createElement('label');
@@ -54,7 +49,6 @@ const generateTodoDOM = todo => {
     renderTodos(todos, filters);
   });
 
-
   // eslint-disable-next-line no-undefined
   if (todo.text.length > 0) {
     textEl.textContent = todo.text;
@@ -64,7 +58,6 @@ const generateTodoDOM = todo => {
   textEl.classList.add('list-item__title');
   textEl.setAttribute('href', `./edit.html#${todo.id}`);
   containerEl.appendChild(textEl);
-
 
   statusEl.textContent = generateLastEdited(todo.updatedAt);
   statusEl.classList.add('list-item__subtitle');
@@ -83,11 +76,8 @@ const generateTodoDOM = todo => {
   containerEl.classList.add('list-item__container');
   todoEl.appendChild(containerEl);
 
-
-
   return todoEl;
 };
-
 
 const sortTodos = (todos, sortBy) => {
   if (sortBy === 'byEdited') {
@@ -125,11 +115,12 @@ const sortTodos = (todos, sortBy) => {
   }
 };
 
-
 const renderTodos = (todos, filters) => {
   const elements = sortTodos(todos, filters.sortBy);
 
-  let filteredTodos = elements.filter(todo => todo.text.toLowerCase().includes(filters.searchText.toLowerCase()));
+  let filteredTodos = elements.filter(todo =>
+    todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+  );
 
   //array filtrato che nasconde i todo completati
   filteredTodos = filteredTodos.filter(todo => {
@@ -143,12 +134,13 @@ const renderTodos = (todos, filters) => {
   //array dei todos da completare e da utilizzare nel titolo dinamico
   const incompleteTodos = todos.filter(todo => !todo.completed);
 
-
   //svuota l'elemento html in cui sono i todos
   document.querySelector('#todo-list').innerHTML = '';
 
   //titolo dinamico
-  document.querySelector('#todo-list').appendChild(generateSummaryDOM(incompleteTodos));
+  document
+    .querySelector('#todo-list')
+    .appendChild(generateSummaryDOM(incompleteTodos));
 
   //crea nuovi elementi html per i todos risultato del filtro iniziale
   if (filteredTodos.length > 0) {
@@ -162,11 +154,10 @@ const renderTodos = (todos, filters) => {
     messageEl.textContent = 'No todos to show';
     document.querySelector('#todo-list').appendChild(messageEl);
   }
-
 };
 
 //renderizza summary
-const generateSummaryDOM = function (incompleteTodos) {
+const generateSummaryDOM = function(incompleteTodos) {
   const summaryTitle = document.createElement('h3');
   if (incompleteTodos.length === 1) {
     summaryTitle.textContent = `You have ${incompleteTodos.length} todo left`;
@@ -178,8 +169,7 @@ const generateSummaryDOM = function (incompleteTodos) {
   return summaryTitle;
 };
 
-
 // eslint-disable-next-line no-unused-vars
-const generateLastEdited = function (timestamp) {
+const generateLastEdited = function(timestamp) {
   return `Last edited ${moment(timestamp).fromNow()}`;
 };

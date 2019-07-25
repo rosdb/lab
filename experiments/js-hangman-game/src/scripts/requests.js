@@ -35,4 +35,4 @@ const getCurrentCountry = async () => {
   return getCountry(location.country);
 };
 
-export { getPuzzle as default };
+export {getPuzzle as default};

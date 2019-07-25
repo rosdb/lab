@@ -7,7 +7,6 @@ const todoBody = document.querySelector('#todo-body');
 const removeTodoEl = document.querySelector('#remove-btn');
 const todoId = location.hash.substring(1);
 
-
 let todo = todos.find(todo => todo.id === todoId);
 
 if (!todo) {
@@ -17,11 +16,9 @@ if (!todo) {
 todoTitle.value = todo.text;
 todoBody.value = todo.description;
 
-
 todoTitle.addEventListener('change', evt => {
   todo.text = evt.target.value;
   todo.updatedAt = moment().valueOf();
-
 
   saveTodos(todos);
 });
@@ -29,7 +26,6 @@ todoTitle.addEventListener('change', evt => {
 todoBody.addEventListener('change', evt => {
   todo.description = evt.target.value;
   todo.updatedAt = moment().valueOf();
-
 
   saveTodos(todos);
 });
@@ -49,8 +45,5 @@ window.addEventListener('storage', evt => {
     }
     todoTitle.value = todo.text;
     todoBody.value = todo.description;
-
   }
 });
-
-

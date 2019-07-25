@@ -6,19 +6,17 @@ let todos = getSavedTodos();
 const filters = {
   searchText: '',
   hideCompleted: false,
-  sortBy: 'byEdited'
+  sortBy: 'byEdited',
 };
 
 //filtro richiamato al load della pagina -> si vedranno tutti i todos storati e il titolo dinamico
 renderTodos(todos, filters);
-
 
 //Evento in ascolto che filtra il testo inserito dall'utente con l'array todos
 document.querySelector('#search-text').addEventListener('input', evt => {
   filters.searchText = evt.target.value;
   renderTodos(todos, filters);
 });
-
 
 document.querySelector('#todo-form').addEventListener('submit', evt => {
   evt.preventDefault(); //annulla il comportamento di default del browser
@@ -32,7 +30,7 @@ document.querySelector('#todo-form').addEventListener('submit', evt => {
     description: '',
     completed: false,
     createdAt: timestamp,
-    updatedAt: timestamp
+    updatedAt: timestamp,
   });
 
   saveTodos(todos);
@@ -40,7 +38,6 @@ document.querySelector('#todo-form').addEventListener('submit', evt => {
 
   evt.target.elements.todoText.value = ''; //svuota il valore dell'input dopo il submit
 });
-
 
 document.querySelector('#hide-completed').addEventListener('change', evt => {
   filters.hideCompleted = evt.target.checked;
@@ -58,6 +55,3 @@ window.addEventListener('storage', evt => {
     renderTodos(todos, filters);
   }
 });
-
-
-
