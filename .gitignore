@@ -4,16 +4,16 @@ yarn-debug.log*
 yarn-error.log*
 
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # production
-/dist
-/build
+dist
+build
 
 # misc
 .DS_Store
