@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Coin from './Coin';
-
 
 class CoinFlipper extends Component {
   constructor(props) {
@@ -9,21 +8,21 @@ class CoinFlipper extends Component {
       flipsNum: 0,
       headsNum: 0,
       tailsNum: 0,
-      isHead: false
+      isHead: false,
     };
     this.updateFlips = this.updateFlips.bind(this);
   }
+
   updateFlips() {
-    let rand = Boolean(Math.round(Math.random()));
-    this.setState(st => {
-      return {
-        flipsNum: st.flipsNum + 1,
-        isHead: rand,
-        headsNum: st.headsNum + (rand ? 1 : 0),
-        tailsNum: st.tailsNum + (!rand ? 1 : 0)
-      }
-    })
+    const rand = Boolean(Math.round(Math.random()));
+    this.setState(st => ({
+      flipsNum: st.flipsNum + 1,
+      isHead: rand,
+      headsNum: st.headsNum + (rand ? 1 : 0),
+      tailsNum: st.tailsNum + (!rand ? 1 : 0),
+    }));
   }
+
   render() {
     return (
       <div className="CoinFlipper">
@@ -32,8 +31,8 @@ class CoinFlipper extends Component {
         <button onClick={this.updateFlips}>Flip me!</button>
         <p>{`Out of ${this.state.flipsNum} flips, there have been ${this.state.headsNum} heads and ${this.state.tailsNum} tails.`}</p>
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
 export default CoinFlipper;

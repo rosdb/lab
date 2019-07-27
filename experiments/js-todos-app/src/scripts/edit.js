@@ -1,5 +1,3 @@
-'use strict';
-
 let todos = getSavedTodos();
 
 const todoTitle = document.querySelector('#todo-title');

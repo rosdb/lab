@@ -1,5 +1,3 @@
-'use strict';
-
 // eslint-disable-next-line no-unused-vars
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem('todos');
@@ -22,7 +20,7 @@ const removeTodo = id => {
   }
 };
 
-//cambia stato completed
+// cambia stato completed
 const toggleTodo = id => {
   const todo = todos.find(todo => todo.id === id);
   if (todo) {
@@ -84,35 +82,36 @@ const sortTodos = (todos, sortBy) => {
     return todos.sort((a, b) => {
       if (a.updatedAt > b.updatedAt) {
         return -1;
-      } else if (a.updatedAt < b.updatedAt) {
-        return 1;
-      } else {
-        return 0;
       }
+      if (a.updatedAt < b.updatedAt) {
+        return 1;
+      }
+      return 0;
     });
-  } else if (sortBy === 'byCreated') {
+  }
+  if (sortBy === 'byCreated') {
     return todos.sort((a, b) => {
       if (a.createdAt > b.createdAt) {
         return -1;
-      } else if (a.createdAt < b.createdAt) {
-        return 1;
-      } else {
-        return 0;
       }
+      if (a.createdAt < b.createdAt) {
+        return 1;
+      }
+      return 0;
     });
-  } else if (sortBy === 'alphabetical') {
+  }
+  if (sortBy === 'alphabetical') {
     return todos.sort((a, b) => {
       if (a.text.toLowerCase() > b.text.toLowerCase()) {
         return -1;
-      } else if (a.text.toLowerCase() < b.text.toLowerCase()) {
-        return 1;
-      } else {
-        return 0;
       }
+      if (a.text.toLowerCase() < b.text.toLowerCase()) {
+        return 1;
+      }
+      return 0;
     });
-  } else {
-    return todos;
   }
+  return todos;
 };
 
 const renderTodos = (todos, filters) => {
@@ -122,27 +121,26 @@ const renderTodos = (todos, filters) => {
     todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
   );
 
-  //array filtrato che nasconde i todo completati
+  // array filtrato che nasconde i todo completati
   filteredTodos = filteredTodos.filter(todo => {
     if (filters.hideCompleted) {
       return !todo.completed;
-    } else {
-      return true;
     }
+    return true;
   });
 
-  //array dei todos da completare e da utilizzare nel titolo dinamico
+  // array dei todos da completare e da utilizzare nel titolo dinamico
   const incompleteTodos = todos.filter(todo => !todo.completed);
 
-  //svuota l'elemento html in cui sono i todos
+  // svuota l'elemento html in cui sono i todos
   document.querySelector('#todo-list').innerHTML = '';
 
-  //titolo dinamico
+  // titolo dinamico
   document
     .querySelector('#todo-list')
     .appendChild(generateSummaryDOM(incompleteTodos));
 
-  //crea nuovi elementi html per i todos risultato del filtro iniziale
+  // crea nuovi elementi html per i todos risultato del filtro iniziale
   if (filteredTodos.length > 0) {
     filteredTodos.forEach(todo => {
       const todoEl = generateTodoDOM(todo);
@@ -156,7 +154,7 @@ const renderTodos = (todos, filters) => {
   }
 };
 
-//renderizza summary
+// renderizza summary
 const generateSummaryDOM = function(incompleteTodos) {
   const summaryTitle = document.createElement('h3');
   if (incompleteTodos.length === 1) {
