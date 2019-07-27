@@ -1,6 +1,6 @@
 # Lab
 
-## Commands
+## CLI Commands
 
 ```sh
 # Install dependencies in packages
