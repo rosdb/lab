@@ -1,8 +1,8 @@
-# Lab
+# Lab 🧪
 
 ## CLI Commands
 
-```sh
+```shell
 # Install dependencies in packages
 $ npm run bootstrap:pkg
 
