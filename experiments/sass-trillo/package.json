@@ -10,7 +10,10 @@
     "compile:sass": "node-sass src/styles/main.scss dist/style.comp.css",
     "prefix:css": "postcss dist/style.comp.css --output dist/style.prefix.css",
     "compress:css": "node-sass dist/style.prefix.css dist/style.css --output-style compressed",
-    "build:css": "run-s compile:sass prefix:css compress:css"
+    "build:css": "run-s compile:sass prefix:css compress:css",
+    "predeploy": "npm run build:css",
+    "deploy": "netlify deploy --dir ./dist",
+    "deploy:prod": "npm run deploy -- --prod"
   },
   "devDependencies": {
     "autoprefixer": "9.6.1",

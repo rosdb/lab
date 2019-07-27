@@ -19,17 +19,19 @@
   "scripts": {
     "clean:pkg": "lerna clean --yes",
     "bootstrap:pkg": "lerna bootstrap",
+    "setup": "run-s -ln clean:pkg bootstrap:pkg",
+    "postinstall": "npm run setup",
     "lint:css": "stylelint ./**/*.{scss,pcss,css} --ignore-path .gitignore",
     "lint:js": "eslint . --ignore-path .gitignore",
     "lint": "run-s lint:**"
   },
   "devDependencies": {
-    "babel-eslint": "9.0.0",
-    "eslint": "5.16.0",
+    "babel-eslint": "10.0.2",
+    "eslint": "6.1.0",
     "eslint-config-airbnb": "17.1.1",
-    "eslint-config-prettier": "4.3.0",
+    "eslint-config-prettier": "6.0.0",
     "eslint-config-wesbos": "0.0.19",
-    "eslint-plugin-html": "5.0.5",
+    "eslint-plugin-html": "6.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.0",

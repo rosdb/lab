@@ -3,12 +3,15 @@
   "name": "sass-natours",
   "version": "0.1.0",
   "scripts": {
+    "watch:pug": "npm run build:pug -- --watch",
+    "watch:scss": "npm run build:scss -- --watch",
+    "watch": "run-p -cln watch:**",
     "build:pug": "pug src --out dist --pretty",
     "build:scss": "node-sass src/styles/main.scss dist/style.css",
     "build": "run-p -cln build:**",
-    "watch:pug": "npm run build:pug -- --watch",
-    "watch:scss": "npm run build:scss -- --watch",
-    "watch": "run-p -cln watch:**"
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy --dir ./dist",
+    "deploy:prod": "npm run deploy -- --prod"
   },
   "devDependencies": {
     "node-sass": "4.12.0",
