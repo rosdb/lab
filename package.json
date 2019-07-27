@@ -19,8 +19,8 @@
   "scripts": {
     "clean:pkg": "lerna clean --yes",
     "bootstrap:pkg": "lerna bootstrap",
-    "lint:css": "stylelint ./**/*.{scss,pcss,css}",
-    "lint:js": "eslint .",
+    "lint:css": "stylelint ./**/*.{scss,pcss,css} --ignore-path .gitignore",
+    "lint:js": "eslint . --ignore-path .gitignore",
     "lint": "run-s lint:**"
   },
   "devDependencies": {
