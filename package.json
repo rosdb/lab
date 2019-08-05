@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "name": "@rosdb/lab",
+  "version": "0.1.0",
+  "author": {
+    "name": "Rosaria De Biasio",
+    "email": "info@rosdb.me",
+    "homepage": "https://rosdb.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosdb/lab.git"
+  },
+  "homepage": "https://github.com/rosdb/lab#readme",
+  "bugs": {
+    "url": "https://github.com/rosdb/lab/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean:pkg": "lerna clean --yes",
+    "bootstrap:pkg": "lerna bootstrap",
+    "setup": "run-s -ln clean:pkg bootstrap:pkg",
+    "postinstall": "npm run setup",
+    "lint:css": "stylelint ./**/*.{scss,pcss,css} --ignore-path .gitignore",
+    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint:fix": "npm run lint:js -- --fix",
+    "lint": "run-s lint:**"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.1",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "6.0.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.6.1",
+    "husky": "3.0.1",
+    "lerna": "3.16.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1",
+    "stylelint": "10.1.0",
+    "stylelint-config-prettier": "5.2.0",
+    "stylelint-config-recommended-scss": "3.3.0",
+    "stylelint-scss": "3.9.2"
+  }
+}

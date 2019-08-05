@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Cell from "./Cell";
-import "./Board.css";
+import React, {Component} from 'react';
+import Cell from './Cell';
+import './Board.css';
 
 /** Game board of Lights out.
  *
@@ -26,32 +26,33 @@ import "./Board.css";
  *
  *  This doesn't handle any clicks --- clicks are on individual cells
  *
- **/
+ * */
 
 class Board extends Component {
   static defaultProps = {
     nrows: 5,
     ncols: 5,
-    chanceLightStartsOn: 0.25
+    chanceLightStartsOn: 0.25,
   };
+
   constructor(props) {
     super(props);
 
     // TODO: set initial state
     this.state = {
       hasWon: false,
-      board: this.createBoard()
+      board: this.createBoard(),
     };
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
 
   createBoard() {
-    let board = [];
+    const board = [];
     // TODO: create array-of-arrays of true/false values
-    for (let y = 0; y < this.props.nrows; y++) {
-      let row = [];
-      for (let x = 0; x < this.props.ncols; x++) {
+    for (let y = 0; y < this.props.nrows; y + 1) {
+      const row = [];
+      for (let x = 0; x < this.props.ncols; x + 1) {
         row.push(Math.random() < this.props.chanceLightStartsOn);
       }
       board.push(row);
@@ -62,9 +63,9 @@ class Board extends Component {
   /** handle changing a cell: update board & determine if winner */
 
   flipCellsAround(coord) {
-    let { ncols, nrows } = this.props;
-    let board = this.state.board;
-    let [y, x] = coord.split("-").map(Number);
+    const {ncols, nrows} = this.props;
+    const {board} = this.state;
+    const [y, x] = coord.split('-').map(Number);
 
     function flipCell(y, x) {
       // if this coord is actually on board, flip it
@@ -74,26 +75,26 @@ class Board extends Component {
       }
     }
     // TODO: flip this cell and the cells around it
-    flipCell(y, x); //Flip initial cell
-    flipCell(y, x - 1); //flip left
-    flipCell(y, x + 1); //flip right
-    flipCell(y - 1, x); //flip below
-    flipCell(y + 1, x); //flip above
+    flipCell(y, x); // Flip initial cell
+    flipCell(y, x - 1); // flip left
+    flipCell(y, x + 1); // flip right
+    flipCell(y - 1, x); // flip below
+    flipCell(y + 1, x); // flip above
 
     // win when every cell is turned off
     // TODO: determine is the game has been won
-    let hasWon = board.every(row => row.every(cell => !cell));
+    const hasWon = board.every(row => row.every(cell => !cell));
 
-    this.setState({ board: board, hasWon: hasWon });
+    this.setState({board, hasWon});
   }
 
   /** Render game board or winning message. */
   makeTable() {
-    let tblBoard = [];
-    for (let y = 0; y < this.props.nrows; y++) {
-      let row = [];
-      for (let x = 0; x < this.props.ncols; x++) {
-        let coord = `${y}-${x}`;
+    const tblBoard = [];
+    for (let y = 0; y < this.props.nrows; y + 1) {
+      const row = [];
+      for (let x = 0; x < this.props.ncols; x + 1) {
+        const coord = `${y}-${x}`;
         row.push(
           <Cell
             key={coord}
@@ -105,28 +106,29 @@ class Board extends Component {
       tblBoard.push(<tr key={y}>{row}</tr>);
     }
     return (
-      <table className='Board'>
+      <table className="Board">
         <tbody>{tblBoard}</tbody>
       </table>
     );
   }
+
   render() {
     return (
       <div>
         {this.state.hasWon ? (
-          <div className='winner'>
-            <span className='neon-orange'>YOU</span>
-            <span className='neon-blue'>WIN!</span>
+          <div className="winner">
+            <span className="neon-orange">YOU</span>
+            <span className="neon-blue">WIN!</span>
           </div>
         ) : (
-            <div>
-              <div className='Board-title'>
-                <div className='neon-orange'>Lights</div>
-                <div className='neon-blue'>Out</div>
-              </div>
-              {this.makeTable()}
+          <div>
+            <div className="Board-title">
+              <div className="neon-orange">Lights</div>
+              <div className="neon-blue">Out</div>
             </div>
-          )}
+            {this.makeTable()}
+          </div>
+        )}
       </div>
     );
   }

@@ -7,17 +7,17 @@
 
   &__side {
     height: 52rem;
-    transition: all .8s ease .2s;
+    transition: all 0.8s ease 0.2s;
 
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden; //fa sì che il border non venga nascosto dagli elementi figli
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &--front {
       background-color: $color-white;
@@ -27,17 +27,28 @@
       transform: rotateY(-180deg);
 
       &-1 {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
       }
 
       &-2 {
-        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
       }
 
       &-3 {
-        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
       }
-
     }
   }
 
@@ -59,30 +70,41 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 
-
     &--1 {
-      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
-      url(../public/assets/img/nat-5.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../public/assets/img/nat-5.jpg);
     }
     &--2 {
-      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
-      url(../public/assets/img/nat-6.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../public/assets/img/nat-6.jpg);
     }
     &--3 {
-      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
-      url(../public/assets/img/nat-7.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../public/assets/img/nat-7.jpg);
     }
   }
 
   &__heading {
-    font-size:2.8rem;
+    font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
     position: absolute;
-    top:12rem;
-    right:2rem;
+    top: 12rem;
+    right: 2rem;
     width: 75%;
   }
 
@@ -92,19 +114,25 @@
     box-decoration-break: clone; // clona lo style dell'elemento in tutti gli elementi in cui si divide lo span
 
     &--1 {
-      background-image: linear-gradient(to right bottom,
-      rgba($color-secondary-light, .85),
-      rgba($color-secondary-dark, .85))
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
     }
     &--2 {
-      background-image: linear-gradient(to right bottom,
-      rgba($color-primary-light, .85),
-      rgba($color-primary-dark, .85))
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
     }
     &--3 {
-      background-image: linear-gradient(to right bottom,
-      rgba($color-tertiary-light, .85),
-      rgba($color-tertiary-dark, .85))
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
     }
   }
 
@@ -116,16 +144,15 @@
       width: 80%;
       margin: 0 auto;
 
-        li {
-          text-align: center;
-          font-size: 1.5rem;
-          padding: 1rem;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
 
-          &:not(:last-child) {
-            border-bottom: 1px solid $color-grey-light-2;
-          }
-
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
         }
+      }
     }
   }
 
@@ -150,17 +177,15 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
-
   }
 
-
- // @include respond(tab-port) {
-   @media only screen and (max-width: 56.25em),
-   only screen and (hover:none) { //includi anche i device che non possono implementare l'hover, perché touch screen
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    //includi anche i device che non possono implementare l'hover, perché touch screen
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &__side {
       height: auto;
@@ -199,5 +224,4 @@
       font-size: 4rem;
     }
   }
-
 }

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "js-todos-app",
+  "version": "0.1.0",
+  "scripts": {
+    "watch:pug": "pug src --out dist --pretty --watch"
+  },
+  "devDependencies": {
+    "live-server": "1.2.1",
+    "pug": "2.0.4",
+    "pug-cli": "1.0.0-alpha6"
+  }
+}

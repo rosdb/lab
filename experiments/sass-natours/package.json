@@ -1,23 +1,23 @@
 {
-  "name": "natours",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "name": "sass-natours",
+  "version": "0.1.0",
   "scripts": {
+    "watch:pug": "npm run build:pug -- --watch",
+    "watch:scss": "npm run build:scss -- --watch",
+    "watch": "run-p -cln watch:**",
     "build:pug": "pug src --out dist --pretty",
     "build:scss": "node-sass src/styles/main.scss dist/style.css",
     "build": "run-p -cln build:**",
-    "watch:pug": "npm run build:pug -- --watch",
-    "watch:scss": "npm run build:scss -- --watch",
-    "watch": "run-p -cln watch:**"
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy --dir ./dist",
+    "deploy:prod": "npm run deploy -- --prod"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.12.0",
-    "npm-run-all": "^4.1.5",
-    "pug": "^2.0.3",
-    "pug-cli": "^1.0.0-alpha6"
+    "netlify-cli": "2.11.31",
+    "node-sass": "4.12.0",
+    "npm-run-all": "4.1.5",
+    "pug": "2.0.4",
+    "pug-cli": "1.0.0-alpha6"
   }
 }

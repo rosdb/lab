@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {Component} from 'react';
 import TodoList from './TodoList';
 
 class App extends Component {
@@ -8,7 +7,7 @@ class App extends Component {
       <div className="App">
         <TodoList />
       </div>
-    )
+    );
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Todo.css';
 
 class Todo extends Component {
@@ -6,7 +6,7 @@ class Todo extends Component {
     super(props);
     this.state = {
       isEditing: false,
-      task: this.props.task
+      task: this.props.task,
     };
     this.handleRemove = this.handleRemove.bind(this);
     this.toggleOnForm = this.toggleOnForm.bind(this);
@@ -14,27 +14,28 @@ class Todo extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
+
   handleRemove() {
-    this.props.removeTodo(this.props.id)
+    this.props.removeTodo(this.props.id);
   }
 
   toggleOnForm() {
-    this.setState({ isEditing: !this.state.isEditing });
+    this.setState({isEditing: !this.state.isEditing});
   }
 
   handleUpdate(evt) {
     evt.preventDefault();
     this.props.updateTodo(this.props.id, this.state.task);
-    this.setState({ isEditing: false });
+    this.setState({isEditing: false});
   }
 
   handleChange(evt) {
     this.setState({
-      [evt.target.name]: evt.target.value
-    })
+      [evt.target.name]: evt.target.value,
+    });
   }
 
-  handleToggle(evt) {
+  handleToggle() {
     this.props.toggleTodo(this.props.id);
   }
 
@@ -44,21 +45,33 @@ class Todo extends Component {
       result = (
         <div className="Todo">
           <form className="Todo-edit-form" onSubmit={this.handleUpdate}>
-            <input type='text' value={this.state.task} name="task" onChange={this.handleChange} />
-            <button>Save</button>
+            <input
+              type="text"
+              value={this.state.task}
+              name="task"
+              onChange={this.handleChange}
+            />
+            <button type="submit">Save</button>
           </form>
         </div>
       );
     } else {
       result = (
         <div className="Todo">
-          <li className={this.props.completed ? 'Todo-task completed' : 'Todo-task'} onClick={this.handleToggle}>{this.props.task}</li>
+          <li
+            className={
+              this.props.completed ? 'Todo-task completed' : 'Todo-task'
+            }
+            onClick={this.handleToggle}
+          >
+            {this.props.task}
+          </li>
           <div className="Todo-buttons">
-            <button onClick={this.toggleOnForm}>
-              <i class='fas fa-pen'></i>
+            <button type="submit" onClick={this.toggleOnForm}>
+              <i className="fas fa-pen" />
             </button>
-            <button onClick={this.handleRemove}>
-              <i class='fas fa-trash'></i>
+            <button type="submit" onClick={this.handleRemove}>
+              <i className="fas fa-trash" />
             </button>
           </div>
         </div>

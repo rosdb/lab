@@ -18,7 +18,6 @@
 }
 .NewTodoForm button {
   padding: 0 1.3rem;
-  border: none;
   background: rgba(255, 255, 255, 0.2);
   color: white;
   text-transform: uppercase;
@@ -29,11 +28,13 @@
   transition: background 0.4s ease-out;
   outline: none;
 }
-.NewTodoForm button:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
+
 .NewTodoForm input,
 .NewTodoForm button {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   height: 3rem;
+}
+
+.NewTodoForm button:hover {
+  background: rgba(0, 0, 0, 0.1);
 }

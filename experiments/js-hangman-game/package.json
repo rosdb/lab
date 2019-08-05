@@ -1,0 +1,26 @@
+{
+  "name": "js-hangman-game",
+  "version": "0.1.0",
+  "scripts": {
+    "watch:pug": "pug src --out dist --pretty --watch",
+    "dev": "webpack-dev-server --mode development --config ./config/webpack.config.js",
+    "build": "webpack --mode production --config ./config/webpack.config.js"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-loader": "8.0.6",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "css-loader": "3.1.0",
+    "file-loader": "4.1.0",
+    "html-loader": "0.5.5",
+    "live-server": "1.2.1",
+    "mini-css-extract-plugin": "0.8.0",
+    "pug": "2.0.4",
+    "pug-cli": "1.0.0-alpha6",
+    "pug-html-loader": "1.1.5",
+    "webpack": "4.37.0",
+    "webpack-cli": "3.3.6",
+    "webpack-dev-server": "3.7.2"
+  }
+}

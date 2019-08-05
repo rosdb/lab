@@ -1,13 +1,24 @@
 {
-  "editor.formatOnSave": true,
   "[javascript]": {
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false
   },
   "[javascriptreact]": {
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false
   },
-  "prettier.disableLanguages": [
-    "javascript",
-    "javascriptreact"
-  ]
+  "[scss]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.quickSuggestions": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  }
 }

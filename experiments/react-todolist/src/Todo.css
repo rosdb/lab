@@ -22,7 +22,7 @@
 }
 
 .Todo.completed .Todo-task:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: -0.5rem;
@@ -73,7 +73,6 @@
 }
 .Todo-edit-form button {
   padding: 0 1.3rem;
-  border: none;
   background: #ff6666;
   color: white;
   text-transform: uppercase;
@@ -83,11 +82,13 @@
   cursor: pointer;
   transition: background 0.2s ease-out;
 }
-.Todo-edit-form button:hover {
-  background: #ff5e5e;
-}
+
 .Todo-edit-form input,
 .Todo-edit-form button {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   height: 3rem;
+}
+
+.Todo-edit-form button:hover {
+  background: #ff5e5e;
 }

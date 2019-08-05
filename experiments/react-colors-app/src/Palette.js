@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import ColorBox from './ColorBox';
 import './Palette.css';
 import Navbar from './Navbar';
