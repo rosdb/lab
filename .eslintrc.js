@@ -2,6 +2,7 @@ module.exports = {
   extends: ['wesbos'],
   rules: {
     'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 0,
     'class-methods-use-this': 0,
     'no-use-before-define': 0,
     'no-shadow': 0,
@@ -14,6 +15,5 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/label-has-for': 0,
     'jsx-a11y/label-has-associated-control': 0,
-    'prettier/prettier': 0,
   },
 };
