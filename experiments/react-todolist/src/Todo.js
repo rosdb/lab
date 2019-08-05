@@ -51,7 +51,7 @@ class Todo extends Component {
               name="task"
               onChange={this.handleChange}
             />
-            <button>Save</button>
+            <button type="submit">Save</button>
           </form>
         </div>
       );
@@ -67,11 +67,11 @@ class Todo extends Component {
             {this.props.task}
           </li>
           <div className="Todo-buttons">
-            <button onClick={this.toggleOnForm}>
-              <i className="fas fa-pen"></i>
+            <button type="submit" onClick={this.toggleOnForm}>
+              <i className="fas fa-pen" />
             </button>
-            <button onClick={this.handleRemove}>
-              <i className="fas fa-trash"></i>
+            <button type="submit" onClick={this.handleRemove}>
+              <i className="fas fa-trash" />
             </button>
           </div>
         </div>

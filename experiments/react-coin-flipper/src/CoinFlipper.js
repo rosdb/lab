@@ -28,7 +28,9 @@ class CoinFlipper extends Component {
       <div className="CoinFlipper">
         <h1>Let's flip a coin</h1>
         <Coin isHead={this.state.isHead} />
-        <button onClick={this.updateFlips}>Flip me!</button>
+        <button type="submit" onClick={this.updateFlips}>
+          Flip me!
+        </button>
         <p>{`Out of ${this.state.flipsNum} flips, there have been ${this.state.headsNum} heads and ${this.state.tailsNum} tails.`}</p>
       </div>
     );

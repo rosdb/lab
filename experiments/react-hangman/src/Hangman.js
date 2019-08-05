@@ -56,6 +56,7 @@ class Hangman extends Component {
   generateButtons() {
     return 'abcdefghijklmnopqrstuvwxyz'.split('').map((ltr, idx) => (
       <button
+        type="button"
         key={idx}
         value={ltr}
         onClick={this.handleGuess}
@@ -87,7 +88,7 @@ class Hangman extends Component {
           {!gameOver ? this.guessedWord() : this.state.answer}
         </p>
         <p className="Hangman-btns">{gameState}</p>
-        <button id="reset" onClick={this.reset}>
+        <button id="reset" type="button" onClick={this.reset}>
           Restart?
         </button>
       </div>

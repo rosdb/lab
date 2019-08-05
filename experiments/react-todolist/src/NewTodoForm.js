@@ -29,7 +29,7 @@ class NewTodoForm extends Component {
   render() {
     return (
       <form className="NewTodoForm" onSubmit={this.handleSubmit}>
-        <label htmlFor="task"></label>
+        <label htmlFor="task" />
         <input
           type="text"
           placeholder="New Todo"
@@ -38,7 +38,7 @@ class NewTodoForm extends Component {
           onChange={this.handleChange}
           name="task"
         />
-        <button>Add Todo</button>
+        <button type="submit">Add Todo</button>
       </form>
     );
   }
