@@ -5,4 +5,5 @@ module.exports = {
     'no-restricted-globals': 0,
     'no-shadow': 0,
   },
+  parser: 'babel-eslint',
 };
