@@ -26,17 +26,18 @@
     background-position: 0% 51%;
   }
 }
+
+.RuleRow td {
+  padding: 0.3em;
+  border-bottom: solid 1px black;
+}
+
 .RuleRow-disabled td:first-child {
   text-decoration: line-through;
 }
 
 .RuleRow-disabled:hover {
   cursor: not-allowed;
-}
-
-.RuleRow td {
-  padding: 0.3em;
-  border-bottom: solid 1px black;
 }
 
 .RuleRow-name {
