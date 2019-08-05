@@ -46,7 +46,7 @@ class Game extends Component {
     });
   }
 
-  roll(evt) {
+  roll() {
     // roll dice whose indexes are in reroll
     this.setState(st => ({
       dice: st.dice.map((d, i) =>
@@ -108,6 +108,7 @@ class Game extends Component {
             />
             <div className="Game-button-wrapper">
               <button
+                type="button"
                 className="Game-reroll"
                 disabled={locked.every(x => x) || rollsLeft === 0 || rolling}
                 onClick={this.animateRoll}

@@ -35,7 +35,7 @@ class Todo extends Component {
     });
   }
 
-  handleToggle(evt) {
+  handleToggle() {
     this.props.toggleTodo(this.props.id);
   }
 
