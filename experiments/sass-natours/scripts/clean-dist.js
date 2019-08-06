@@ -2,7 +2,6 @@ const path = require('path');
 const shell = require('shelljs');
 
 const DIST_DIR = path.resolve(__dirname, '../', 'dist');
-const PUBLIC_DIR = path.resolve(__dirname, '../', 'public');
 
 // --- Helpers
 function formattingList(files) {
@@ -28,22 +27,9 @@ function clean(targets) {
   shell.rm('-r', targets);
 }
 
-// --- Copy
-function copy(from, target) {
-  if (typeof from !== 'string' && typeof target !== 'string') {
-    shell.exit(1);
-    return;
-  }
-
-  shell.echo('Copy from...');
-  shell.echo(`Source: ${PUBLIC_DIR.toString()}`);
-  shell.echo(`Target: ${DIST_DIR.toString()}`);
-  shell.cp('-r', from, target);
-}
-
 // --- Program
 (function run() {
   clean([DIST_DIR]);
-  copy(PUBLIC_DIR, DIST_DIR);
+  shell.mkdir('-p', `${DIST_DIR}/public`);
   shell.exit(0);
 })();
