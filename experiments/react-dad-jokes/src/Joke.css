@@ -11,12 +11,12 @@
   display: flex;
   margin-right: 1rem;
   align-items: center;
-  justify-content: center;
-  width: 15%;
+  justify-content: flex-start;
+  width: 20%;
 }
 
 .Joke-text {
-  width: 75%;
+  width: 60%;
   font-size: 1.2rem;
 }
 
@@ -35,7 +35,7 @@
 .fa-arrow-up,
 .fa-arrow-down {
   font-size: 1.5em;
-  margin: 10px;
+  margin: 4px;
   cursor: pointer;
   transition: all 0.3s;
 }
