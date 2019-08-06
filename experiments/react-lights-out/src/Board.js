@@ -50,9 +50,9 @@ class Board extends Component {
   createBoard() {
     const board = [];
     // TODO: create array-of-arrays of true/false values
-    for (let y = 0; y < this.props.nrows; y + 1) {
+    for (let y = 0; y < this.props.nrows; y += 1) {
       const row = [];
-      for (let x = 0; x < this.props.ncols; x + 1) {
+      for (let x = 0; x < this.props.ncols; x += 1) {
         row.push(Math.random() < this.props.chanceLightStartsOn);
       }
       board.push(row);
@@ -91,9 +91,9 @@ class Board extends Component {
   /** Render game board or winning message. */
   makeTable() {
     const tblBoard = [];
-    for (let y = 0; y < this.props.nrows; y + 1) {
+    for (let y = 0; y < this.props.nrows; y += 1) {
       const row = [];
-      for (let x = 0; x < this.props.ncols; x + 1) {
+      for (let x = 0; x < this.props.ncols; x += 1) {
         const coord = `${y}-${x}`;
         row.push(
           <Cell
