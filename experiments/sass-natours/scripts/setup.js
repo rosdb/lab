@@ -1,9 +1,8 @@
 const path = require('path');
 const shell = require('shelljs');
 
-const DIST = path.resolve(__dirname, 'dist');
-
-const PUBLIC = path.resolve(__dirname, 'public');
+const DIST_DIR = path.resolve(__dirname, '../', 'dist');
+const PUBLIC_DIR = path.resolve(__dirname, '../', 'public');
 
 // --- Copy
 function copy(from, target) {
@@ -13,13 +12,13 @@ function copy(from, target) {
   }
 
   shell.echo('Copy from...');
-  shell.echo(`Source: ${PUBLIC.toString()}`);
-  shell.echo(`Target: ${DIST.toString()}`);
+  shell.echo(`Source: ${PUBLIC_DIR.toString()}`);
+  shell.echo(`Target: ${DIST_DIR.toString()}`);
   shell.cp('-r', from, target);
 }
 
 // --- Program
 (function run() {
-  copy(PUBLIC, DIST);
+  copy(PUBLIC_DIR, DIST_DIR);
   shell.exit(0);
 })();
