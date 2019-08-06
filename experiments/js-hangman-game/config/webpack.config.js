@@ -5,12 +5,12 @@ const SRC_DIR = path.resolve(__dirname, '../src');
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 const OUTPUT_DIR = path.resolve(__dirname, '../dist/');
 
-const ENTRY_POINT_JS = path.resolve(__dirname, SRC_DIR, 'scripts/index.js');
-const ENTRY_POINT_CSS = path.resolve(__dirname, SRC_DIR, 'styles/main.css');
-const ENTRY_POINT_PUG = path.resolve(__dirname, SRC_DIR, 'index.pug');
+const ENTRY_POINT_JS = path.resolve(SRC_DIR, 'scripts/index.js');
+const ENTRY_POINT_CSS = path.resolve(SRC_DIR, 'styles/main.css');
+const ENTRY_POINT_PUG = path.resolve(SRC_DIR, 'index.pug');
 
 module.exports = {
-  entry: ['babel-polyfill', ENTRY_POINT_JS, ENTRY_POINT_CSS, ENTRY_POINT_PUG],
+  entry: [ENTRY_POINT_JS, ENTRY_POINT_CSS, ENTRY_POINT_PUG],
   output: {
     filename: 'scripts/bundle.js',
     path: OUTPUT_DIR,
@@ -67,9 +67,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['env'],
-          },
         },
       },
     ],

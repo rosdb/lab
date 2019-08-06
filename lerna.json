@@ -7,7 +7,7 @@
       "exact": true
     },
     "bootstrap": {
-      "hoist": false
+      "hoist": true
     },
     "version": {
       "allowBranch": ["master"],

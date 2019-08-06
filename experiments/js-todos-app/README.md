@@ -2,5 +2,5 @@
 
 ```shell
 # Create a dist folder
-$ npm run watch:pug
+$ npm run pug:watch
 ```
