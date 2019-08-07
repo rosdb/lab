@@ -13,7 +13,7 @@ $ npm run clean:pkg
 $ npm run lint
 ```
 
-# Netlify projects
+# Netlify Projects
 
 # SASS/SCSS
 
