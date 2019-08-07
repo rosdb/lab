@@ -6,7 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy --dir ./build",
+    "deploy:prod": "npm run deploy -- --prod"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -16,6 +19,8 @@
   "devDependencies": {
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.7.1",
-    "enzyme-to-json": "3.3.5"
+    "enzyme-to-json": "3.3.5",
+    "netlify-cli": "2.12.0",
+    "shelljs": "0.8.3"
   }
 }
