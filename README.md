@@ -13,26 +13,15 @@ $ npm run clean:pkg
 $ npm run lint
 ```
 
-# Netlify Projects
+# Some Lab Projects
 
-# SASS/SCSS
+**Natours** (Pug, SCSS) - [Preview](https://sass-natours.netlify.com)
+**Nexter** (Pug, SCSS) - [Preview](https://sass-nexter.netlify.com)
+**Trillo** (Pug, SCSS) - [Preview](https://sass-trillo.netlify.com)
 
-https://sass-natours.netlify.com
+**Todo-List** (React) - [Preview](https://rc-todolist.netlify.com)
+**Hangman-Game** (React) - [Preview](https://rc-hangman-game.netlify.com)
+**Dad-Jokes-List** (React) - [Preview](https://rc-dad-jokes.netlify.com)
 
-https://sass-nexter.netlify.com
-
-https://sass-trillo.netlify.com
-
-# REACT
-
-https://rc-todolist.netlify.com
-
-https://rc-hangman-game.netlify.com
-
-https://rc-dad-jokes.netlify.com
-
-# JAVASCRIPT
-
-https://js-todos-app.netlify.com
-
-https://js-hangman-game.netlify.com
+**Todo-List** (Javascript) - [Preview](https://js-todos-app.netlify.com)
+**Hangman-Game** (Javascript) - [Preview](https://js-hangman-game.netlify.com)
