@@ -29,8 +29,6 @@ https://rc-todolist.netlify.com
 
 https://rc-hangman-game.netlify.com
 
-https://rc-hangman-game.netlify.com
-
 https://rc-dad-jokes.netlify.com
 
 # JAVASCRIPT
