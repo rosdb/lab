@@ -13,7 +13,7 @@ $ npm run clean:pkg
 $ npm run lint
 ```
 
-# Some Lab Projects
+## Some Lab Projects
 
 - **Natours** (Pug, SCSS) - [Preview](https://sass-natours.netlify.com)
 - **Nexter** (Pug, SCSS) - [Preview](https://sass-nexter.netlify.com)
