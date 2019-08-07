@@ -12,7 +12,9 @@
     "compress:css": "node-sass dist/style.prefix.css dist/style.css --output-style compressed",
     "build:css": "run-s compile:sass prefix:css compress:css",
     "build:assets": "node scripts/copy-assets.js",
-    "predeploy": "run-p build:css build:assets watch:pug",
+    "prebuild": "node scripts/clean-dist.js",
+    "build": "run-p -cln watch:pug build:**",
+    "predeploy": "npm run build",
     "deploy": "netlify deploy --dir ./dist",
     "deploy:prod": "npm run deploy -- --prod"
   },
