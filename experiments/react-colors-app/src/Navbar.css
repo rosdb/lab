@@ -32,6 +32,11 @@
   margin: 0 10px;
 }
 
+.Select {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
 .rc-slider-track {
   background-color: transparent;
 }
