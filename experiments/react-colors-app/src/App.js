@@ -9,6 +9,7 @@ class App extends Component {
   findPalette(id) {
     return seedColors.find(palette => palette.id === id);
   }
+
   render() {
     return (
       <Switch>

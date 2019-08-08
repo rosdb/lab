@@ -19,13 +19,16 @@ class Navbar extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.closeSnackbar = this.closeSnackbar.bind(this);
   }
+
   handleChange(evt) {
     this.setState({format: evt.target.value, open: true});
     this.props.handleChange(evt.target.value);
   }
+
   closeSnackbar() {
     this.setState({open: false});
   }
+
   render() {
     const {level, changeLevel} = this.props;
     const {format} = this.state;
