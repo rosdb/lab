@@ -37,16 +37,18 @@ class Navbar extends Component {
         <div className="Logo">
           <Link to="/">reactcolorpicker</Link>
         </div>
-        <div className="Slider">
-          <span>Level: {level}</span>
-          <Slider
-            defaultValue={level}
-            min={100}
-            max={900}
-            onAfterChange={changeLevel}
-            step={100}
-          />
-        </div>
+        {this.props.showingAllColors && (
+          <div className="Slider">
+            <span>Level: {level}</span>
+            <Slider
+              defaultValue={level}
+              min={100}
+              max={900}
+              onAfterChange={changeLevel}
+              step={100}
+            />
+          </div>
+        )}
         <div className="Select">
           <Select value={format} onChange={this.handleChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
