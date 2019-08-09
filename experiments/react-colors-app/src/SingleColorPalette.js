@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import PaletteFooter from './PaletteFooter';
-import {Link} from 'react-router-dom';
 
 class SingleColorPalette extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class SingleColorPalette extends Component {
 
   gatherShades(palette, colorToFilterBy) {
     let shades = [];
-    let allColors = palette.colors;
-    for (let key in allColors) {
+    const allColors = palette.colors;
+    for (const key in allColors) {
       shades = shades.concat(
         allColors[key].filter(color => color.id === colorToFilterBy)
       );
