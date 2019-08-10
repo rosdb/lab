@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {withStyles} from '@material-ui/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
-import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
-import './Navbar.css';
+import 'rc-slider/assets/index.css';
+import style from './styles/NavbarStyles';
 
 class Navbar extends Component {
   constructor(props) {
@@ -30,15 +31,15 @@ class Navbar extends Component {
   }
 
   render() {
-    const {level, changeLevel} = this.props;
+    const {level, changeLevel, classes} = this.props;
     const {format} = this.state;
     return (
-      <header className="Navbar">
-        <div className="Logo">
+      <header className={classes.Navbar}>
+        <div className={classes.Logo}>
           <Link to="/">reactcolorpicker</Link>
         </div>
         {this.props.showingAllColors && (
-          <div className="Slider">
+          <div className={classes.Slider}>
             <span>Level: {level}</span>
             <Slider
               defaultValue={level}
@@ -49,7 +50,7 @@ class Navbar extends Component {
             />
           </div>
         )}
-        <div className="Select">
+        <div className={classes.Select}>
           <Select value={format} onChange={this.handleChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
@@ -85,4 +86,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withStyles(style)(Navbar);
