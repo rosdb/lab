@@ -1,8 +1,9 @@
 const path = require('path');
 const shell = require('shelljs');
 
-const DIST_DIR = path.resolve(__dirname, '../', 'dist');
-const PUBLIC_DIR = path.resolve(__dirname, '../', 'public');
+const ROOT_DIR = path.resolve(__dirname, '../');
+const DIST_DIR = path.resolve(ROOT_DIR, 'dist');
+const PUBLIC_DIR = path.resolve(ROOT_DIR, 'public');
 
 // --- Copy
 function copy(from, target) {
