@@ -120,6 +120,7 @@ export default function NewPaletteForm(props) {
   function handleChangeNameColor(evt) {
     setColorName((evt.target.name = evt.target.value));
   }
+
   function handleChangeNamePalette(evt) {
     setPaletteName((evt.target.name = evt.target.value));
   }
