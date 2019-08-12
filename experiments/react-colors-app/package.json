@@ -13,6 +13,7 @@
     "@material-ui/icons": "4.2.1",
     "@material-ui/styles": "4.3.0",
     "chroma-js": "2.0.4",
+    "clsx": "1.0.4",
     "rc-slider": "8.6.13",
     "react": "16.8.6",
     "react-copy-to-clipboard": "5.0.1",
