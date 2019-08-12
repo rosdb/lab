@@ -136,6 +136,11 @@ export default function NewPaletteForm(props) {
     props.history.push('/');
   }
 
+  function removeColor(colorName) {
+    const colorFiltered = colors.filter(color => color.name !== colorName);
+    addColor([...colorFiltered]);
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -238,7 +243,12 @@ export default function NewPaletteForm(props) {
       >
         <div className={classes.drawerHeader} />
         {colors.map(color => (
-          <DraggableColorBox color={color.color} nameColor={color.name} />
+          <DraggableColorBox
+            key={color.name}
+            color={color.color}
+            nameColor={color.name}
+            handleClick={() => removeColor(color.name)}
+          />
         ))}
       </main>
     </div>
