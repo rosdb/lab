@@ -1,7 +1,9 @@
 const path = require('path');
 const shell = require('shelljs');
 
-const DIST_DIR = path.resolve(__dirname, '../', 'dist');
+const ROOT_DIR = path.resolve(__dirname, '../');
+const DIST_DIR = path.resolve(ROOT_DIR, 'dist');
+const DIST_PUBLIC_DIR = path.resolve(DIST_DIR, 'public');
 
 // --- Cleaner
 function clean(targets) {
@@ -17,6 +19,6 @@ function clean(targets) {
 // --- Program
 (function run() {
   clean([DIST_DIR]);
-  shell.mkdir('-p', `${DIST_DIR}/public`);
+  shell.mkdir('-p', DIST_PUBLIC_DIR);
   shell.exit(0);
 })();

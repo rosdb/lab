@@ -18,7 +18,7 @@
   "license": "MIT",
   "scripts": {
     "clean:pkg": "lerna clean --yes",
-    "bootstrap:pkg": "lerna bootstrap",
+    "bootstrap:pkg": "lerna bootstrap --hoist --force-local",
     "setup": "run-s -ln clean:pkg bootstrap:pkg",
     "postinstall": "npm run setup",
     "lint:css": "stylelint ./**/*.{scss,pcss,css} --ignore-path .gitignore",
