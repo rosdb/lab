@@ -14,7 +14,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {ChromePicker} from 'react-color';
 import Button from '@material-ui/core/Button';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
-import DraggableColorBox from './DraggableColorBox';
+import DraggableColorList from './DraggableColorList';
+import arrayMove from 'array-move';
 
 const drawerWidth = 400;
 
@@ -81,7 +82,11 @@ export default function NewPaletteForm(props) {
   const palettes = props.palette;
   const [open, setOpen] = React.useState(false);
   const [currentColor, setColor] = React.useState('teal');
-  const [colors, addColor] = React.useState([{color: 'blue', name: 'blue'}]);
+  const [colors, addColor] = React.useState([
+    {color: 'blue', name: 'blue'},
+    {color: 'pink', name: 'pink'},
+    {color: 'grey', name: 'grey'},
+  ]);
   const [newColorName, setColorName] = React.useState('');
   const [newPaletteName, setPaletteName] = React.useState('');
 
@@ -139,6 +144,10 @@ export default function NewPaletteForm(props) {
   function removeColor(colorName) {
     const colorFiltered = colors.filter(color => color.name !== colorName);
     addColor([...colorFiltered]);
+  }
+
+  function onSortEnd({oldIndex, newIndex}) {
+    addColor(arrayMove(colors, oldIndex, newIndex));
   }
 
   return (
@@ -242,14 +251,12 @@ export default function NewPaletteForm(props) {
         })}
       >
         <div className={classes.drawerHeader} />
-        {colors.map(color => (
-          <DraggableColorBox
-            key={color.name}
-            color={color.color}
-            nameColor={color.name}
-            handleClick={() => removeColor(color.name)}
-          />
-        ))}
+        <DraggableColorList
+          colors={colors}
+          removeColor={removeColor}
+          axis="xy"
+          onSortEnd={onSortEnd}
+        />
       </main>
     </div>
   );
