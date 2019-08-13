@@ -13,8 +13,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {ChromePicker} from 'react-color';
 import Button from '@material-ui/core/Button';
-import DraggableColorBox from './DraggableColorBox';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import DraggableColorBox from './DraggableColorBox';
 
 const drawerWidth = 400;
 
@@ -126,11 +126,11 @@ export default function NewPaletteForm(props) {
   }
 
   function handleSubmit() {
-    let newName = newPaletteName;
+    const newName = newPaletteName;
     const newPalette = {
       paletteName: newName,
       id: newName.toLowerCase().replace(/ /g, '-'),
-      colors: colors,
+      colors: {colors},
     };
     props.savePalette(newPalette);
     props.history.push('/');
