@@ -133,7 +133,7 @@ export default function NewPaletteForm(props) {
     const newPalette = {
       paletteName: newName,
       id: newName.toLowerCase().replace(/ /g, '-'),
-      colors: {colors},
+      colors: colors,
     };
     props.savePalette(newPalette);
     props.history.push('/');
