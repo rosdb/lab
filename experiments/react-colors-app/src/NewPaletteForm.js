@@ -1,14 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
+import PaletteFormNav from './PaletteFormNav';
 import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {ChromePicker} from 'react-color';
@@ -85,7 +82,6 @@ export default function NewPaletteForm(props) {
   const [currentColor, setColor] = React.useState('teal');
   const [colors, addColor] = React.useState(palettes[0].colors);
   const [newColorName, setColorName] = React.useState('');
-  const [newPaletteName, setPaletteName] = React.useState('');
   const paletteIsFull = colors.length >= maxColor;
 
   React.useEffect(() => {
@@ -94,11 +90,6 @@ export default function NewPaletteForm(props) {
     );
     ValidatorForm.addValidationRule('isColorUnique', () =>
       colors.every(({color}) => color !== currentColor)
-    );
-    ValidatorForm.addValidationRule('isPaletteNameUnique', val =>
-      palettes.every(
-        ({paletteName}) => paletteName.toLowerCase() !== val.toLowerCase()
-      )
     );
   });
 
@@ -124,15 +115,10 @@ export default function NewPaletteForm(props) {
     setColorName((evt.target.name = evt.target.value));
   }
 
-  function handleChangeNamePalette(evt) {
-    setPaletteName((evt.target.name = evt.target.value));
-  }
-
-  function handleSubmit() {
-    const newName = newPaletteName;
+  function handleSubmit(newPaletteName) {
     const newPalette = {
-      paletteName: newName,
-      id: newName.toLowerCase().replace(/ /g, '-'),
+      paletteName: newPaletteName,
+      id: newPaletteName.toLowerCase().replace(/ /g, '-'),
       colors: colors,
     };
     props.savePalette(newPalette);
@@ -161,45 +147,13 @@ export default function NewPaletteForm(props) {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        color="default"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Persistent drawer
-          </Typography>
-          <ValidatorForm onSubmit={handleSubmit}>
-            <TextValidator
-              label="Palette Name"
-              value={newPaletteName}
-              name="newPaletteName"
-              onChange={handleChangeNamePalette}
-              validators={['required', 'isPaletteNameUnique']}
-              errorMessages={[
-                'enter palette name',
-                'palette name already used',
-              ]}
-            />
-            <Button variant="contained" color="primary" type="submit">
-              Save Palette
-            </Button>
-          </ValidatorForm>
-        </Toolbar>
-      </AppBar>
+      <PaletteFormNav
+        open={open}
+        classes={classes}
+        palettes={palettes}
+        handleDrawerOpen={handleDrawerOpen}
+        handleSubmit={handleSubmit}
+      />
       <Drawer
         className={classes.drawer}
         variant="persistent"
