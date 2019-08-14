@@ -85,7 +85,7 @@ export default function PaletteFormNav(props) {
           </Typography>
         </Toolbar>
         <div className={classes.navBtns}>
-          {/* <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+          <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
             <TextValidator
               label="Palette Name"
               value={newPaletteName}
@@ -100,7 +100,7 @@ export default function PaletteFormNav(props) {
             <Button variant="contained" color="primary" type="submit">
               Save Palette
             </Button>
-          </ValidatorForm> */}
+          </ValidatorForm>
           <Link to="/">
             <Button variant="contained" color="secondary" type="button">
               Go Back
