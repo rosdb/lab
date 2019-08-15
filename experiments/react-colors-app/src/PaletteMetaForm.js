@@ -6,11 +6,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import 'emoji-mart/css/emoji-mart.css';
+import {Picker} from 'emoji-mart';
 
 export default function PaletteMetaForm(props) {
-  const [open, setOpen] = React.useState(true);
+  const [open] = React.useState(true);
   const [newPaletteName, setPaletteName] = React.useState('');
-  const {palettes, handleSubmit} = props;
+  const {palettes, handleSubmit, hideForm} = props;
 
   React.useEffect(() => {
     ValidatorForm.addValidationRule('isPaletteNameUnique', val =>
@@ -20,20 +22,12 @@ export default function PaletteMetaForm(props) {
     );
   });
 
-  function handleClose() {
-    setOpen(false);
-  }
-
   function handleChangeNamePalette(evt) {
     setPaletteName((evt.target.name = evt.target.value));
   }
 
   return (
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="form-dialog-title"
-    >
+    <Dialog open={open} onClose={hideForm} aria-labelledby="form-dialog-title">
       <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
       <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
         <DialogContent>
@@ -41,6 +35,7 @@ export default function PaletteMetaForm(props) {
             Please enter a name for your new beautiful palette. Make sure it's
             unique!
           </DialogContentText>
+          <Picker />
           <TextValidator
             label="Palette Name"
             value={newPaletteName}
@@ -53,7 +48,7 @@ export default function PaletteMetaForm(props) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={hideForm} color="primary">
             Cancel
           </Button>
           <Button variant="contained" color="primary" type="submit">
