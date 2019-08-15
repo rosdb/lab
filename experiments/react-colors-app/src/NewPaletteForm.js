@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
+import {useTheme} from '@material-ui/core/styles';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import Drawer from '@material-ui/core/Drawer';
@@ -12,61 +12,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Button from '@material-ui/core/Button';
 import DraggableColorList from './DraggableColorList';
 import arrayMove from 'array-move';
-
-const drawerWidth = 400;
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    display: 'flex',
-    alignItems: 'center',
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    height: 'calc(100vh - 64px)',
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-  container: {
-    width: '90%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttons: {
-    width: '100%',
-  },
-  button: {
-    width: '50%',
-  },
-}));
+import useStyles from './styles/NewPaletteFormStyles';
 
 export default function NewPaletteForm(props) {
   const classes = useStyles();
