@@ -8,7 +8,7 @@ const style = {
     display: 'inline-block',
     position: 'relative',
     cursor: 'pointer',
-    marginBottom: '-5px',
+    marginBottom: '-6px',
     '&:hover svg': {
       color: 'white',
       transform: 'scale(1.5)',
@@ -39,6 +39,9 @@ const style = {
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'space-between',
+    [sizes.down('sm')]: {
+      padding: '5px',
+    },
   },
   deleteIcon: {
     transition: 'all 0.3s ease-in-out',
