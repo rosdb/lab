@@ -1,7 +1,7 @@
 import React from 'react';
 import {withStyles} from '@material-ui/styles';
-import style from './styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
+import style from './styles/MiniPaletteStyles';
 
 function MiniPalette(props) {
   const {classes, paletteName, emoji, colors, handleDelete, id} = props;

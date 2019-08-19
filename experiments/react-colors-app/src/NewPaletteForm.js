@@ -1,8 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import {useTheme} from '@material-ui/core/styles';
-import PaletteFormNav from './PaletteFormNav';
-import ColorPickerForm from './ColorPickerForm';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -10,8 +8,10 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Button from '@material-ui/core/Button';
-import DraggableColorList from './DraggableColorList';
 import arrayMove from 'array-move';
+import PaletteFormNav from './PaletteFormNav';
+import ColorPickerForm from './ColorPickerForm';
+import DraggableColorList from './DraggableColorList';
 import useStyles from './styles/NewPaletteFormStyles';
 
 export default function NewPaletteForm(props) {
@@ -57,7 +57,7 @@ export default function NewPaletteForm(props) {
 
   function addRandomColor() {
     const allColors = palettes.map(p => p.colors).flat();
-    let rand = Math.floor(Math.random() * allColors.length);
+    const rand = Math.floor(Math.random() * allColors.length);
     const randomColor = allColors[rand];
     addColor([...colors, randomColor]);
   }

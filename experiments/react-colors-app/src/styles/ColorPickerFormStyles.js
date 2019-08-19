@@ -1,6 +1,6 @@
 import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   picker: {
     width: '100% !important',
     marginTop: '2rem',
