@@ -28,7 +28,7 @@
     "react-router-dom": "5.0.1",
     "react-scripts": "3.0.1",
     "react-sortable-hoc": "1.9.1",
-    "react-transition-group": "4.2.2"
+    "react-transition-group": "4.3.0"
   },
   "devDependencies": {
     "netlify-cli": "2.13.1"
