@@ -51,9 +51,11 @@ const useStyles = makeStyles(theme => ({
   },
   buttons: {
     width: '100%',
+    marginTop: '1rem',
   },
   button: {
-    width: '50%',
+    width: '45%',
+    marginLeft: '0.7rem',
   },
 }));
 

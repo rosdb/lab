@@ -7,9 +7,10 @@ const useStyles = makeStyles(() => ({
   },
   addColor: {
     width: '100%',
-    padding: '1rem',
-    marginTop: '1rem',
-    fontSize: '2rem',
+    padding: '0.5rem',
+    marginTop: '0.5rem',
+    fontSize: '1.5rem',
+    marginBottom: '3rem',
   },
   colorNameInput: {
     width: '100%',

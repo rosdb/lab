@@ -17,8 +17,11 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '64px',
+    [sizes.down('sm')]: {
+      height: '9.9%',
+    },
     [sizes.down('xs')]: {
-      height: '8.3%',
+      height: '8.6%',
     },
   },
   appBarShift: {
