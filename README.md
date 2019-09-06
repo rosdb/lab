@@ -22,6 +22,7 @@ $ npm run lint
 - **Todo-List** (React) - [Preview](https://rc-todolist.netlify.com)
 - **Hangman-Game** (React) - [Preview](https://rc-hangman-game.netlify.com)
 - **Dad-Jokes-List** (React) - [Preview](https://rc-dad-jokes.netlify.com)
+- **Color-Picker** (React) - [Preview](https://rc-colors-app.netlify.com/)
 
 - **Todo-List** (Javascript) - [Preview](https://js-todos-app.netlify.com)
 - **Hangman-Game** (Javascript) - [Preview](https://js-hangman-game.netlify.com)
