@@ -15,14 +15,14 @@ $ npm run lint
 
 ## Some Lab Projects
 
-- **Natours** (Pug, SCSS) - [Preview](https://sass-natours.netlify.com)
-- **Nexter** (Pug, SCSS) - [Preview](https://sass-nexter.netlify.com)
-- **Trillo** (Pug, SCSS) - [Preview](https://sass-trillo.netlify.com)
-
 - **Todo-List** (React) - [Preview](https://rc-todolist.netlify.com)
 - **Hangman-Game** (React) - [Preview](https://rc-hangman-game.netlify.com)
 - **Dad-Jokes-List** (React) - [Preview](https://rc-dad-jokes.netlify.com)
 - **Color-Picker** (React) - [Preview](https://rc-colors-app.netlify.com/)
+
+- **Natours** (Pug, SCSS) - [Preview](https://sass-natours.netlify.com)
+- **Nexter** (Pug, SCSS) - [Preview](https://sass-nexter.netlify.com)
+- **Trillo** (Pug, SCSS) - [Preview](https://sass-trillo.netlify.com)
 
 - **Todo-List** (Javascript) - [Preview](https://js-todos-app.netlify.com)
 - **Hangman-Game** (Javascript) - [Preview](https://js-hangman-game.netlify.com)
