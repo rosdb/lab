@@ -20,9 +20,9 @@ $ npm run lint
 - **Dad-Jokes-List** (React) - [Preview](https://rc-dad-jokes.netlify.com)
 - **Color-Picker** (React) - [Preview](https://rc-colors-app.netlify.com/)
 
+- **Todo-List** (Javascript) - [Preview](https://js-todos-app.netlify.com)
+- **Hangman-Game** (Javascript) - [Preview](https://js-hangman-game.netlify.com)
+
 - **Natours** (Pug, SCSS) - [Preview](https://sass-natours.netlify.com)
 - **Nexter** (Pug, SCSS) - [Preview](https://sass-nexter.netlify.com)
 - **Trillo** (Pug, SCSS) - [Preview](https://sass-trillo.netlify.com)
-
-- **Todo-List** (Javascript) - [Preview](https://js-todos-app.netlify.com)
-- **Hangman-Game** (Javascript) - [Preview](https://js-hangman-game.netlify.com)
