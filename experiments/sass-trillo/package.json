@@ -19,7 +19,7 @@
     "deploy:prod": "npm run deploy -- --prod"
   },
   "devDependencies": {
-    "autoprefixer": "9.6.1",
+    "autoprefixer": "9.6.4",
     "concat": "1.0.3",
     "netlify-cli": "2.15.0",
     "node-sass": "4.12.0",
