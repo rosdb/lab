@@ -31,6 +31,6 @@
     "react-transition-group": "4.3.0"
   },
   "devDependencies": {
-    "netlify-cli": "2.17.0"
+    "netlify-cli": "2.19.0"
   }
 }
