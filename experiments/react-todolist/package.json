@@ -3,7 +3,7 @@
   "name": "react-forms-exercise",
   "version": "0.1.0",
   "dependencies": {
-    "react": "16.10.2",
+    "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-scripts": "3.2.0",
     "uuid": "3.3.3"
@@ -18,7 +18,7 @@
     "deploy:prod": "npm run deploy -- --prod"
   },
   "devDependencies": {
-    "netlify-cli": "2.21.0",
+    "netlify-cli": "2.21.0",r
     "shelljs": "0.8.3"
   }
 }
