@@ -18,7 +18,7 @@
     "deploy:prod": "npm run deploy -- --prod"
   },
   "devDependencies": {
-    "netlify-cli": "2.20.2",
+    "netlify-cli": "2.21.0",r
     "shelljs": "0.8.3"
   }
 }
